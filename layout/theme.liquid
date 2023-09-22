@@ -1,12 +1,17 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estate98</title>
     {{ content_for_header }}
+    {% section 'navbar' %}
     {{ 'style.css' | asset_url | stylesheet_tag }}
+    {{ 'featured.css' | asset_url | stylesheet_tag }}
+    {{ 'beverage.css' | asset_url | stylesheet_tag }}
   </head>
   <body>
-    {% section 'navbar' %}
-    <main>
-      {{ content_for_layout }}
-    </main>
+    {{ content_for_layout }}
+    <script src="{{ 'script.js' | asset_url }}" defer></script>
   </body>
 </html>
