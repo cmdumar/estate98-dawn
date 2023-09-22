@@ -1,8 +1,12 @@
 <html>
-  <header>
+  <head>
     {{ content_for_header }}
-  </header>
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+  </head>
   <body>
-    {{ content_for_layout }}
+    {% section 'navbar' %}
+    <main>
+      {{ content_for_layout }}
+    </main>
   </body>
 </html>
