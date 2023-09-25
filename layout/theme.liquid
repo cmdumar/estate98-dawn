@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estate98</title>
     {{ content_for_header }}
-    {% section 'navbar' %}
     {{ 'style.css' | asset_url | stylesheet_tag }}
     {{ 'featured.css' | asset_url | stylesheet_tag }}
     {{ 'beverage.css' | asset_url | stylesheet_tag }}
   </head>
   <body>
-    {{ content_for_layout }}
+    {% section 'navbar' %}
+    <section class="container">
+      {{ content_for_layout }}
+    </section>
     <script src="{{ 'script.js' | asset_url }}" defer></script>
   </body>
 </html>

@@ -1,0 +1,64 @@
+.beverage-container {
+  width: 100%;
+}
+
+.heading {
+  font-family: 'Alternate Gothic Cond ATF';
+  font-size: 70px;
+  text-align: center;
+}
+
+.beverage {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 2rem;
+  margin-top: 20px;
+}
+
+.beverage-list p,
+.beverage-container p {
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+}
+
+.icon {
+  padding: 20px 30px;
+}
+
+.beverage-list img {
+  margin: auto;
+  margin-bottom: 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .beverage-container {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .heading {
+    font-size: 80px;
+  }
+
+  .beverage {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .beverage-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .beverage-list p {
+    width: 220px;
+  }
+
+  .spoon {
+    padding-bottom: 8px;
+  }
+}
