@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Gothic+A1:wght@700&display=swap');
+
 :root {
-  --clr-theme: #A32B2A;
+  --clr-theme: #a32b2a;
 }
 
 /* Box sizing rules */
@@ -16,9 +18,18 @@
   font: inherit;
 }
 
+@font-face {
+  font-family: 'Alternate Gothic Cond ATF';
+  src: url('./AlternateGothicCondATF-Bold.woff2') format('woff2'),
+      url('./AlternateGothicCondATF-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -32,7 +43,7 @@ body {
   height: 100%;
   background-repeat: repeat;
   background-size: contain;
-  background-image: url("{{ 'body-bg.jpeg.jpeg' | asset_url}}")
+  background-image: url("{{ 'body-bg.jpeg.jpeg' | asset_url }}");
 }
 /* Set core body defaults */
 body {
@@ -52,8 +63,12 @@ svg {
   display: block;
 }
 
+.container {
+  padding: 0 30px;
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media(prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
   }
@@ -75,7 +90,7 @@ svg {
   margin-bottom: 1.5rem;
 }
 
-@media(max-width:768px) {
+@media (max-width: 768px) {
   .heading-primary {
     font-size: 38px;
   }
