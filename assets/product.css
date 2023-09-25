@@ -1,0 +1,176 @@
+/* right column */
+.product-container {
+    max-width: 1300px;
+    display: flex;
+    gap: 40px;
+    padding: 80px 30px 0;
+    margin: auto;
+}
+
+.product-left {
+    flex-basis: 48%; 
+}
+
+.product-right {
+    flex-basis: 52%;
+}
+
+.main-img {
+    margin-bottom: 42px;
+    object-fit: cover;
+}
+
+.sec-img {
+    object-fit: cover;
+    width: 25%;
+    cursor: pointer;
+    
+}
+
+.multiple-img-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+/* left column */
+.tab {
+    display: flex;
+    width: 100%;
+    height: 62px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.tab>* {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: .88px;
+}
+
+.delivery {
+    background-color: black;
+    color: white;
+}
+
+.onetime {
+    background-color: white;
+}
+
+.title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.title {
+    color: var(--clr-theme);
+    font-size: 40px;
+}
+
+.qty, .plus, .minus {
+    display: inline-block;
+}
+.qty {
+    background-color: white;
+    padding: 10px 15px;
+    font-size: 26px;
+    margin: 0 10px;
+}
+
+.plus{
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.minus {
+    font-size: 48px;
+    cursor: pointer;
+    padding-top: 6px;
+}
+
+.reviews {
+    padding: 15px 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    margin-top: -20px;
+}
+
+.reviews span:first-child {
+    margin-right: 16px;
+}
+
+.money-back {
+    background-color: white;
+    padding: 10px 15px;
+    font-size: 18px;
+    width: fit-content;
+}
+
+.product-desc {
+    margin: 32px 0;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.80px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    letter-spacing: .28px;
+}
+
+.total span {
+    font-size: 28px;
+}
+
+.price {
+    font-size: 40px;
+    color: var(--clr-theme);
+}
+
+.total p {
+    font-size: 28px;
+}
+
+.coupon {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    height: 38px;
+    margin-bottom: 32px;
+}
+
+.coupon input {
+    width: 80%;
+    padding-left: 20px;
+}
+
+.apply {
+    width: 20%;
+    color: white;
+    background-color: black;
+    outline: none;
+}
+
+.shop-now {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    color: white;
+    font-size: 20px;
+    background-color: var(--clr-theme);
+}
+
+
+
+
+
