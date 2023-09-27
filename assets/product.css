@@ -1,39 +1,56 @@
-/* right column */
+/* left column */
 .product-container {
     max-width: 1300px;
     display: flex;
     gap: 40px;
     padding: 80px 30px 0;
     margin: auto;
+    height: fit-content;
 }
 
 .product-left {
-    flex-basis: 48%; 
+    flex-basis: 50%; 
 }
 
 .product-right {
-    flex-basis: 52%;
+    flex-basis: 50%;
 }
 
 .main-img {
-    margin-bottom: 42px;
+    margin-bottom: 22px;
     object-fit: cover;
-}
-
-.sec-img {
-    object-fit: cover;
-    width: 25%;
-    cursor: pointer;
-    
+    max-width: 600px;
+    max-height: 550px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    flex-grow: 1;
 }
 
 .multiple-img-container {
     display: flex;
-    gap: 10px;
-    width: 100%;
+    justify-content: space-between;
 }
 
-/* left column */
+.small-img {
+    flex-basis: 24%;
+}
+
+.sec-img {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    flex-grow: 1;
+    cursor: pointer;  
+}
+
+/* right column */
+.product-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .tab {
     display: flex;
     width: 100%;
@@ -47,6 +64,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "AlternateGotNo3D";
     font-size: 22px;
     font-weight: 400;
     letter-spacing: .88px;
@@ -68,28 +86,35 @@
     padding-bottom: 10px;
 }
 
+.qty-mbl {
+    display: none;
+    font-size: 22px;
+}
+
 .title {
     color: var(--clr-theme);
+    font-family: "AlternateGotNo3D";
     font-size: 40px;
 }
 
 .qty, .plus, .minus {
     display: inline-block;
 }
+
 .qty {
     background-color: white;
-    padding: 10px 15px;
-    font-size: 26px;
+    padding: 8px 12px;
+    font-size: 18px;
     margin: 0 10px;
 }
 
 .plus{
-    font-size: 28px;
+    font-size: 20px;
     cursor: pointer;
 }
 
 .minus {
-    font-size: 48px;
+    font-size: 32px;
     cursor: pointer;
     padding-top: 6px;
 }
@@ -105,11 +130,36 @@
     margin-right: 16px;
 }
 
+.reviews span:first-child, .money-back {
+    font-family: 'DM Sans';
+    font-weight: 700;
+}
+
 .money-back {
     background-color: white;
     padding: 10px 15px;
-    font-size: 18px;
+    font-size: 16px;
     width: fit-content;
+    margin: -20px 0 30px;
+}
+
+.production-container {
+ width: 100%;
+ display: flex;
+ gap: 22px;
+ flex-wrap: wrap;
+}
+
+.production {
+    display: flex;
+    gap: 8px;
+    font-size: 16px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.production span {
+    padding-top: 4px;
 }
 
 .product-desc {
@@ -127,16 +177,13 @@
 }
 
 .total span {
-    font-size: 28px;
+    font-size: 32px;
+    font-family: "AlternateGotNo3D"
 }
 
 .price {
-    font-size: 40px;
-    color: var(--clr-theme);
-}
-
-.total p {
-    font-size: 28px;
+    display: inline-block;
+    color: var(--clr-theme); 
 }
 
 .coupon {
@@ -166,8 +213,83 @@
     align-items: center;
     height: 48px;
     color: white;
+    font-family: "DM Sans";
     font-size: 20px;
     background-color: var(--clr-theme);
+}
+
+/* tooltip */
+.production-container a {
+    position: relative;
+}
+
+.production-container a:after {
+    position: absolute;
+    content: attr(data-tip);
+    width: 160px;
+    padding: 12px 16px;
+    text-align: center;
+    display: flex;
+    color: white;
+    background-color: var(--clr-theme);
+    left: -2em;
+    right: 0;
+    bottom: -2.8em;
+    transition: 1s ease-in-out;
+    z-index: 10;
+}
+
+.production-container a:after {
+    display: none;
+}
+
+.production-container a:hover:after {
+    display: block;
+}
+
+@media(max-width: 1127px) {
+    .product-container {
+        flex-direction: column;
+        max-width: 700px;
+    }
+    .product-left {
+        width: 100%;
+    }
+
+    .main-img, .sec-img {
+        max-width: 100%;
+    }
+}
+
+@media(max-width:640px) {
+    .product-container {
+        padding: 30px 0;
+    }
+    .sec-img {
+       height: auto;
+    }
+
+    .title-container {
+        display: block;
+    }
+
+    .qty-mbl {
+        display: inline-block;
+        margin-right: 24px ;
+    }
+
+    .counter {
+        margin: 10px 0 14px;
+    }
+}
+@media(max-width: 380px) {
+    .tab p {
+        font-size: 18px;
+    }
+
+    .apply {
+        font-size: 12px;
+    }
 }
 
 

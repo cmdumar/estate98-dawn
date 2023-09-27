@@ -21,12 +21,14 @@ smallImgs[3].onclick = function() {
 
 const delivery = document.querySelector('.delivery')
 const oneTime = document.querySelector('.onetime')
+const month = document.querySelector('.month')
 
 oneTime.onclick = function() {
     delivery.style.backgroundColor = 'white'
     delivery.style.color = 'black'
     oneTime.style.backgroundColor = 'black'
     oneTime.style.color = 'white'
+    month.style.display = 'none'
 }
 
 delivery.onclick = function() {
@@ -34,6 +36,7 @@ delivery.onclick = function() {
     oneTime.style.color = 'black'
     delivery.style.backgroundColor = 'black'
     delivery.style.color = 'white'
+    month.style.display = 'inline'
 }
 
 // quantity 
