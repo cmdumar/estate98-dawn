@@ -1,0 +1,77 @@
+.convenience-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.convenience-desc {
+    text-align: center;
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.convenience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    position: relative;
+}
+
+.bottle-main {
+    width: 100%;
+}
+
+.grid-1, .grid-3 {
+   position: relative;
+   top: 35%;
+}
+
+.grid-1 {
+    left: 25%;
+}
+
+.grid-1 li, .grid-3 li {
+    margin-bottom: 16px;
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 16px;
+}
+
+@media(max-width: 1020px){
+    .bottle-main {
+        height: auto;
+    }
+
+    .grid-1 li, .grid-3 li {
+        margin-bottom: 10px;
+    }
+
+    .grid-1, .grid-3 {
+        top: 30%;
+    }
+}
+
+@media(max-width: 880px) {
+    .convenience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bottle-main {
+        width: 450px;
+        margin: auto;
+    }
+
+    .grid-1 {
+        order: 2;
+        margin-bottom: 8px;
+    }
+
+    .grid-3 {
+        order: 3;
+    }
+
+    .grid-1, .grid-3 {
+        left: 10%;
+        top: 10%;
+    }
+
+}
