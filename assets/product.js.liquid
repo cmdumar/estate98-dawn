@@ -1,5 +1,5 @@
-const mainImg = document.getElementById('MainImg')
-const smallImgs = document.getElementsByClassName('sec-img')
+mainImg = document.getElementById('MainImg')
+smallImgs = document.getElementsByClassName('sec-img') || []
 
 smallImgs[0].onclick = function() {
     mainImg.src = smallImgs[0].src
@@ -19,9 +19,9 @@ smallImgs[3].onclick = function() {
 
 // tab
 
-const delivery = document.querySelector('.delivery')
-const oneTime = document.querySelector('.onetime')
-const month = document.querySelector('.month')
+delivery = document.querySelector('.delivery')
+oneTime = document.querySelector('.onetime')
+month = document.querySelector('.month')
 
 oneTime.onclick = function() {
     delivery.style.backgroundColor = 'white'
@@ -40,11 +40,11 @@ delivery.onclick = function() {
 }
 
 // quantity 
-const qty = document.querySelector('.qty')
-const plus = document.querySelector('.plus')
-const minus = document.querySelector('.minus')
+qty = document.querySelector('.qty')
+plus = document.querySelector('.plus')
+minus = document.querySelector('.minus')
 
-let value = 1
+value = 1
 
 plus.onclick = function() {
     if(value < 10) {
@@ -58,13 +58,4 @@ minus.onclick = function() {
         value--
         qty.innerText = value
     }
-}
-
-// navbar mobile menu
-
-mblMenu = document.querySelector('.mbl-menu')
-
-mblMenu.onclick = () => {
-    nav = document.querySelector('.nav')
-    nav.classList.toggle('active')
 }
