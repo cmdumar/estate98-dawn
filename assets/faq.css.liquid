@@ -1,0 +1,45 @@
+.faq-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 48px 12px;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.faq li {
+  list-style: none;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid black;
+}
+
+.faq li label {
+  font-size: 16px;
+  font-family: 'DM Sans';
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.content {
+  padding-top: 24px;
+  line-height: 24px;
+}
+
+#accordion label + input[type="radio"] {
+  display: none;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+#accordion label + input[type="radio"]:checked + .content {
+  max-height: 400px;
+}
