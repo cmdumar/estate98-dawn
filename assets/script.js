@@ -67,5 +67,4 @@ mblMenu = document.querySelector('.mbl-menu')
 mblMenu.onclick = () => {
     nav = document.querySelector('.nav')
     nav.classList.toggle('active')
-    console.log('clicked')
 }
