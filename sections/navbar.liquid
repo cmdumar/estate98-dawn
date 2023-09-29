@@ -2,12 +2,14 @@
 
 <navbar class="navbar">
   <div class="logo">
-    <img
-      width="148"
-      height="81"
-      loading="eager"
-      src={{ "estate-logo.svg" | asset_url }} alt="{{ shop.name }}"
-    />
+    <a href="#">
+      <img
+        width="148"
+        height="81"
+        loading="eager"
+        src={{ "estate-logo.svg" | asset_url }}
+        alt="{{ shop.name }}" />
+    </a>
   </div>
   <ul class="nav">
     {% for link in linklists.main-menu.links %}

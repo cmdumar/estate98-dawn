@@ -13,6 +13,7 @@
     {{ 'reviews.css' | asset_url | stylesheet_tag }}
     {{ 'recipe.css' | asset_url | stylesheet_tag }}
     {{ 'faq.css' | asset_url | stylesheet_tag }}
+    {{ 'footer.css' | asset_url | stylesheet_tag }}
 
   </head>
   <body>
@@ -20,6 +21,7 @@
     <section class="container">
       {{ content_for_layout }}
     </section>
+    {% section 'footer' %}
     <script src="{{ 'script.js' | asset_url }}" defer></script>
   </body>
 </html>
