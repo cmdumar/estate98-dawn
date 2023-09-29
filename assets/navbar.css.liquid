@@ -25,6 +25,10 @@
   padding: 10px 0;
 }
 
+.logo img {
+  width: 100%;
+}
+
 .nav-item a {
   color: #101010;
   font-family: 'Alternate Gothic Cond ATF';
@@ -33,11 +37,64 @@
   font-size: 24px;
   text-transform: uppercase;
   padding: 10px 15px;
-  transition: all 1s;
+  display: inline-block;
+  transition: all 0.6s;
 }
 
 .nav-item a:hover {
-  color: var(--clr-theme)
+  color: var(--clr-theme);
+  transform: scale(1.1);
 }
 
-.mbl-menu {}
+.mbl-menu {
+  cursor: pointer;
+  display: none;
+}
+
+.mbl-menu > * {
+  width: 24px;
+  height: 4px;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  background-color: black;
+}
+
+@media(max-width: 740px) {
+  .navbar {
+    padding: 0 30px;
+  }
+
+  .mbl-menu {
+    display: block;
+  }
+  .nav {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 0;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: 0.5s;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 10;
+  }
+
+  .nav.active {
+    height: 30vh;
+    opacity: 1;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .nav-item a {
+    font-size: 16px;
+    color: white;
+  }
+}
