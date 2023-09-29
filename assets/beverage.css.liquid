@@ -1,49 +1,41 @@
 .beverage-container {
   width: 100%;
-}
-
-.heading {
-  font-family: 'Alternate Gothic Cond ATF';
-  font-size: 70px;
-  text-align: center;
+  padding: 64px 24px;
 }
 
 .beverage {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
   margin-bottom: 2rem;
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 .beverage-list p,
 .beverage-container p {
   text-align: center;
-  font-family: 'DM Sans', sans-serif;
+  font-size: 1.2rem;
+  font-family: 'DM Sans';
+  font-weight: 400;
   font-size: 16px;
+  line-height: 1.5em;
 }
 
-.icon {
-  padding: 20px 30px;
+.beverage-list {
+  margin-top: 3rem;
 }
 
 .beverage-list img {
-  margin: auto;
-  margin-bottom: 1.5rem;
+  width: 3rem;
+  margin: 0.5rem auto 1.5rem;
+  height: auto;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 821px) {
   .beverage-container {
     max-width: 1000px;
     margin: auto;
   }
 
-  .heading {
-    font-size: 80px;
-  }
-
   .beverage {
-    flex-direction: row;
+    display: flex;
     justify-content: space-between;
   }
 
@@ -55,10 +47,10 @@
   }
 
   .beverage-list p {
-    width: 220px;
+    max-width: 320px;
   }
 
   .spoon {
-    padding-bottom: 8px;
-  }
+    padding-top: 16px;
+  };
 }

@@ -2,16 +2,23 @@
 
 <navbar class="navbar">
   <div class="logo">
-    <img
-      width="148"
-      height="81"
-      loading="eager"
-      src={{ "estate-logo.svg" | asset_url }} alt="{{ shop.name }}"
-    />
+    <a href="#">
+      <img
+        width="148"
+        height="81"
+        loading="eager"
+        src={{ "estate-logo.svg" | asset_url }}
+        alt="{{ shop.name }}" />
+    </a>
   </div>
   <ul class="nav">
     {% for link in linklists.main-menu.links %}
       <li class="nav-item">{{ link.title | link_to: link.url }}</li>
     {% endfor %}
   </ul>
+  <div class="mbl-menu">
+    <div class="first-bar"></div>
+    <div class="second-bar"></div>
+    <div class="third-bar"></div>
+  </div>
 </navbar>
