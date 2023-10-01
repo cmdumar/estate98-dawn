@@ -13,14 +13,16 @@
     {{ 'reviews.css' | asset_url | stylesheet_tag }}
     {{ 'recipe.css' | asset_url | stylesheet_tag }}
     {{ 'faq.css' | asset_url | stylesheet_tag }}
+    {{ 'hero.css' | asset_url | stylesheet_tag }}
+    {{ 'homesec1.css' | asset_url | stylesheet_tag }}
+    {{ 'generations.css' | asset_url | stylesheet_tag }}
+    {{ 'history.css' | asset_url | stylesheet_tag }}
     {{ 'footer.css' | asset_url | stylesheet_tag }}
 
   </head>
   <body>
     {% section 'navbar' %}
-    <section class="container">
-      {{ content_for_layout }}
-    </section>
+    {{ content_for_layout }}
     {% section 'footer' %}
     {{ 'script.js' | asset_url | script_tag }}
     {{ 'product.js' | asset_url | script_tag }}
