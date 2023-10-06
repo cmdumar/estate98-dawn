@@ -8,14 +8,13 @@
   margin-top: 2rem;
 }
 
-.beverage-list p,
-.beverage-container p {
+.beverage-text,
+.beverage-desc {
   text-align: center;
-  font-size: 1.2rem;
   font-family: 'DM Sans';
   font-weight: 400;
   font-size: 16px;
-  line-height: 1.5em;
+  line-height: 28px;
 }
 
 .beverage-list {
@@ -28,9 +27,27 @@
   height: auto;
 }
 
-@media only screen and (min-width: 821px) {
+.original-bottle {
+  max-width: 575px;
+  margin: auto;
+}
+
+.original-bottle img {
+  margin: auto;
+  width: 100%;
+  height: auto;
+}
+
+.beverage-title-text {
+  color: var(--clr-theme);
+  font-family: 'AlternateGotNo3D';
+  font-size: 30px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 1020px) {
   .beverage-container {
-    max-width: 1000px;
+    max-width: 1300px;
     margin: auto;
   }
 
@@ -46,7 +63,7 @@
     gap: 1rem;
   }
 
-  .beverage-list p {
+  .beverage-text {
     max-width: 320px;
   }
 

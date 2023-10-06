@@ -1,16 +1,26 @@
 .footer {
-  background-image: url("{{ 'footer.jpeg' | asset_url }}");
   width: 100vw;
+  min-height: 80vh;
+  background-image: url("{{ 'footer.jpeg' | asset_url }}");
+  background-size: cover;
+  background-position: 60%;
   padding-top: 60px;
+  position: relative;
 }
 
 .join {
   max-width: 1000px;
-  min-height: 270px;
-  margin: 140px auto;
-  padding: 40px 120px 70px;
+  min-height: 220px;
+  margin: 40px auto 120px;
+  padding: 20px 120px 40px;
   background-image: url("{{ 'background-main.jpeg' | asset_url }}");
   background-size: contain;
+  border-radius: 10px;
+}
+
+.join p {
+  text-align: center;
+  margin-top: 12px;
 }
 
 .theme-clr {
@@ -45,12 +55,15 @@
 }
 
 .footer-2 {
-  width: 100%;
+  width: 100vw;
+  /* background-color: rgba(1, 1, 1, 0.8); */
   background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
+  padding: 5px 60px;
+  position: absolute;
+  bottom: 0;
 }
 
 .socials {
@@ -75,6 +88,10 @@
 @media(max-width: 762px) {
   .join {
     padding: 18px;
+  }
+
+  .footer {
+    min-height: 100vh;
   }
 
   .btn {
@@ -104,5 +121,15 @@
 
   .footer-2 {
     padding: 20px;
+  }
+}
+
+@media(min-width: 1620px) {
+  .join {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1200px;
   }
 }

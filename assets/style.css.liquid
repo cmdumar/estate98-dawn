@@ -26,7 +26,7 @@
 
 @font-face {
   font-family: 'AlternateGotNo3D';
-  src: url('./AlternateGotNo3dRegular.woff2') format('woff2');
+  src: url('./AlternateGotNo3dRegular.woff2') format('woff2'), url('./AlternateGotNo3dRegular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -34,7 +34,7 @@
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('./DMSans.woff2') format('woff2');
+  src: url('./DMSans-Regular.woff2') format('woff2'), url('./DMSans-Regular.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -42,7 +42,7 @@
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('./DMSans.woff2') format('woff2');
+  src: url('./DMSans-Bold.woff2') format('woff2'), url('./DMSans-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -58,6 +58,8 @@
 p {
   font-family: "DM Sans";
   font-weight: 400;
+  font-size: 16px;
+
 }
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
@@ -73,7 +75,8 @@ html:focus-within {
 html,
 body {
   height: 100%;
-  background-image: url("{{ 'body-bg.jpeg.jpeg' | asset_url }}");
+  background-image: url("{{ 'body-bg.jpeg' | asset_url }}");
+  background-size: cover;
 }
 /* Set core body defaults */
 body {
@@ -121,6 +124,19 @@ svg {
   text-align: center;
   margin-bottom: 1.5rem;
   letter-spacing: 1.80px;
+}
+
+@media(min-width: 1560px) {
+  .heading-primary {
+    font-size: 78px;
+  }
+}
+
+@media(max-width: 768px) {
+  .heading-primary {
+    font-size: 48px;
+    line-height: 1.1;
+  }
 }
 
 .align-left {

@@ -1,20 +1,32 @@
 .reviews-container {
   max-width: 1200px;
-  display: flex;
   margin: auto;
-  gap: 20px;
-  padding: 64px 64px 38px;
-  overflow: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
+  padding: 64px 10px 38px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(350px, 400px));
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 30px;
 }
 
 .review {
   min-width: 300px;
   border: 1px solid lightgray;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
-  scroll-snap-align: start;
+}
+
+@media(max-width:1020px) {
+  .reviews-container {
+    display: flex;
+    gap: 20px;
+    padding: 64px 64px 38px;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .review {
+    scroll-snap-align: start;
+  }
 }
 
 .author {
