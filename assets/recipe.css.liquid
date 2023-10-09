@@ -4,19 +4,29 @@
   display: flex;
   gap: 10px;
   margin: auto;
-  overflow: auto;
+  /* overflow-x: auto;
+  overflow-y: visible; */
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
 }
 
 .recipe {
   min-width: 280px;
-  min-height: 320px;
-  background-size: cover;
-  background-position: bottom;
+  min-height: 350px;
   flex-shrink: 0;
   scroll-snap-align: start;
   position: relative;
+  cursor: pointer;
+}
+
+.reipe-img {
+  height: 100%;
+  width: 100%;
+}
+
+.recipe-img img {
+  max-width: 100%;
+  object-fit: cover;
 }
 
 .recipe p {
@@ -31,7 +41,7 @@
   padding-bottom: 4px;
 }
 
-.recipe div {
+.recipe-opacity {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -43,7 +53,7 @@
   margin-top: 48px;
 }
 
-.recipe-1 {
+/* .recipe-1 {
   background-image: url("{{ 'hotcoffee.jpeg' | asset_url }}");
 }
 
@@ -57,7 +67,7 @@
 
 .recipe-4 {
   background-image: url("{{ 'affogato.jpeg' | asset_url }}");
-}
+} */
 
 /* this is just to make the card centered 
 to make use of the min-width on parent div */

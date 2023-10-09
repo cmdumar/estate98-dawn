@@ -1,39 +1,32 @@
 <h1 class="heading-primary mt-48">OUR RECIPES</h1>
 <div class="recipes">
-  <a href="">
-    <div class="recipe recipe-1">
-      <div class="op-bg-90"></div>
-      <p>HOT COFFEE</p>
-      <p class="hidden-text">
-        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-      </p>
-    </div>
-  </a>
-  <a href="">
+  {% for product in collections['recipe'].products %}
+    <a href="{{ product.url }}">
+      <div class="recipe">
+        <div class="recipe-img">
+          <img src="{{ product.featured_image | img_url: 'large', crop: 'center' }}" alt="">
+        </div>
+        <div class="op-bg-90 recipe-opacity"></div>
+        <p>{{ product.title }}</p>
+      </div>
+    </a>
+    {% comment %} <a href="">
     <div class="recipe recipe-2">
-      <div class="op-bg-90"></div>
-      <p>ICED COFFEE</p>
-      <p class="hidden-text">
-        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-      </p>
+    <div class="op-bg-90"></div>
+    <p>ICED COFFEE</p>
     </div>
-  </a>
-  <a href="">
+    </a>
+    <a href="">
     <div class="recipe recipe-3">
-      <div class="op-bg-90"></div>
-      <p>ICED LATTE</p>
-      <p class="hidden-text">
-        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-      </p>
+    <div class="op-bg-90"></div>
+    <p>ICED LATTE</p>
     </div>
-  </a>
-  <a href="">
+    </a>
+    <a href="">
     <div class="recipe recipe-4">
-      <div class="op-bg-90"></div>
-      <p>AFFOGATO</p>
-      <p class="hidden-text">
-        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-      </p>
+    <div class="op-bg-90"></div>
+    <p>AFFOGATO</p>
     </div>
-  </a>
+    </a>   {% endcomment %}
+  {% endfor %}
 </div>
