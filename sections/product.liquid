@@ -107,7 +107,7 @@
       <span>TOTAL</span>
       <div>
         <span class="dollar-symbol">$</span>
-        <span class="price">{{ collections['frontpage'].products[0].price | money }}</span>
+        <span class="price">{{ collections['frontpage'].products[0].price | money_without_currency }}</span>
         <span class="month">/MO</span>
       </div>
     </div>
