@@ -1,29 +1,32 @@
 <h1 class="heading-primary mt-48">OUR RECIPES</h1>
 <div class="recipes">
-  {% comment %} <a href="">
-  <div class="recipe recipe-1">
-  <div class="op-bg-90"></div>
-  <p>HOT COFFEE</p>
-  </div>
-  </a>
-  <a href="">
-  <div class="recipe recipe-2">
-  <div class="op-bg-90"></div>
-  <p>ICED COFFEE</p>
-  </div>
-  </a>
-  <a href="">
-  <div class="recipe recipe-3">
-  <div class="op-bg-90"></div>
-  <p>ICED LATTE</p>
-  </div>
-  </a>
-  <a href="">
-  <div class="recipe recipe-4">
-  <div class="op-bg-90"></div>
-  <p>AFFOGATO</p>
-  </div>
-  </a> {% endcomment %}{% for product in collections['recipe'].products %}
-    {{- product.title | link_to: product.url }}
+  {% for product in collections['recipe'].products %}
+    <a href="{{ product.url }}">
+      <div class="recipe">
+        <div class="recipe-img">
+          <img src="{{ product.featured_image | img_url: 'large', crop: 'center' }}" alt="">
+        </div>
+        <div class="op-bg-90 recipe-opacity"></div>
+        <p>{{ product.title }}</p>
+      </div>
+    </a>
+    {% comment %} <a href="">
+    <div class="recipe recipe-2">
+    <div class="op-bg-90"></div>
+    <p>ICED COFFEE</p>
+    </div>
+    </a>
+    <a href="">
+    <div class="recipe recipe-3">
+    <div class="op-bg-90"></div>
+    <p>ICED LATTE</p>
+    </div>
+    </a>
+    <a href="">
+    <div class="recipe recipe-4">
+    <div class="op-bg-90"></div>
+    <p>AFFOGATO</p>
+    </div>
+    </a>   {% endcomment %}
   {% endfor %}
 </div>
