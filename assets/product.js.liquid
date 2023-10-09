@@ -43,19 +43,25 @@ delivery.onclick = function() {
 qty = document.querySelector('.qty')
 plus = document.querySelector('.plus')
 minus = document.querySelector('.minus')
+price = parseInt(document.querySelector('.price').textContent)
 
-let value = 1
+value = 1
 
-plus.onclick = function() {
+plus.onclick = () => {
     if(value < 10) {
         value++
-        qty.innerText = value
+        qty.value = value
+        document.querySelector('.price').textContent = price*value.toString()
     }
 }
 
-minus.onclick = function() {
+minus.onclick = () => {
     if(value > 1) {
         value--
-        qty.innerText = value
+        qty.value = value
+        document.querySelector('.price').textContent = price*value.toString()
     }
 }
+
+
+  

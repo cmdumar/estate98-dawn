@@ -16,6 +16,17 @@
   font: inherit;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 @font-face {
   font-family: 'Alternate Gothic Cond ATF';
   src: url('./AlternateGothicCondATF-Bold.woff2') format('woff2'), url('./AlternateGothicCondATF-Bold.woff') format('woff');
