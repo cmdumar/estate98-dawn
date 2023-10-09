@@ -105,15 +105,23 @@
 
 .qty {
   background-color: white;
-  padding: 8px 12px;
+  padding: 10px;
+  text-align: center;
   font-size: 20px;
   margin: 0 10px;
+  border: none;
 }
 
 .plus img,
 .minus img {
   cursor: pointer;
   width: 18px;
+  transition: 0.5s;
+}
+
+.plus img:hover,
+.minus img:hover {
+  transform: scale(1.2)
 }
 
 .reviews {
@@ -174,12 +182,14 @@
   letter-spacing: 0.28px;
 }
 
-.total span {
+.total span,
+.dollar-symbol {
   font-size: 32px;
   font-family: "AlternateGotNo3D"
 }
 
-.price {
+.price,
+.dollar-symbol {
   display: inline-block;
   color: var(--clr-theme);
 }
@@ -195,13 +205,14 @@
 .coupon input {
   width: 80%;
   padding-left: 20px;
+  border: none;
 }
 
 .apply {
   width: 20%;
   color: white;
   background-color: black;
-  outline: none;
+  border: none;
 }
 
 .shop-now {

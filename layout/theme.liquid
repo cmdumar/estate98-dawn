@@ -27,5 +27,23 @@
     {% section 'footer' %}
     {{ 'script.js' | asset_url | script_tag }}
     {{ 'product.js' | asset_url | script_tag }}
+    <script src="https://cdn.shopify.com/buy-button/latest/buy-button-storefront.min.js"></script>
+    <script>
+      ShopifyBuy.UI.onReady(function(ui) {
+        ui.createComponent('button', {
+          id: [8190553030962],
+          node: document.getElementById('shop-pay-button'),
+          options: {
+            product: {
+              variantId: [44705736982834],
+              quantity: 1
+            },
+            text: {
+              button: 'Shop Pay'
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>

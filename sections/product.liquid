@@ -58,7 +58,16 @@
       <div class="counter">
         <span class="qty-mbl">Qty</span>
         <span class="minus"><img src="{{ 'minus.png' | asset_url }}" alt=""></span>
-        <span class="qty">1</span>
+        <input
+          type="number"
+          inputmode="numeric"
+          max="10"
+          min="1"
+          step="1"
+          class="qty"
+          id="num-count"
+          value="1"
+          disabled>
         <span class="plus"><img src="{{ 'plus.png' | asset_url }}" alt=""></span>
       </div>
     </div>
@@ -97,7 +106,8 @@
     <div class="total">
       <span>TOTAL</span>
       <div>
-        <span class="price">$25</span>
+        <span class="dollar-symbol">$</span>
+        <span class="price">{{ collections['frontpage'].products[0].price | money_without_currency }}</span>
         <span class="month">/MO</span>
       </div>
     </div>
@@ -108,5 +118,8 @@
     <div class="shop-now">
       SHOP NOW
     </div>
+    <button id="shop-pay-button" class="shop-pay-button">
+      Shop Pay
+    </button>
   </div>
 </div>

@@ -4,7 +4,9 @@
     autoplay
     loop
     muted
-    poster="{{ 'product1.jpeg' | asset_url }}">
+    {% comment %}
+    poster="{{ 'product1.jpeg' | asset_url }}"
+    {% endcomment %}>
     <source src="{{ 'Untitled.mp4' | asset_url }}" type="video/mp4">
   </video>
   <div class="hero-content">
