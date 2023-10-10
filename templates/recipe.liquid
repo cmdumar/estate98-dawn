@@ -1,0 +1,28 @@
+<section class="container">
+  <div class="recipe-detail-container">
+    <h1 class="heading-primary uppercase">{{ product.title }}</h1>
+    <div class="recipe-flex">
+      <div class="recipe-left">
+        <p>{{ product.description }}</p>
+      </div>
+      <div class="recipe-right">
+        <img src="{{ product.featured_image  | img_url: '525x700'}}" alt="{{ product.title }}">
+      </div>
+    </div>
+  </div>
+
+  <h1 class="heading-primary mt-48">OUR RECIPES</h1>
+  <div class="recipes">
+    {% for product in collections['recipe'].products %}
+      <a href="{{ product.url }}">
+        <div class="recipe">
+          <div class="recipe-thumbnail">
+            <img src="{{ product.featured_image | img_url: '400x520', crop: 'center' }}" alt="">
+          </div>
+          <div class="op-bg-90 recipe-opacity"></div>
+          <p>{{ product.title }}</p>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+</section>
