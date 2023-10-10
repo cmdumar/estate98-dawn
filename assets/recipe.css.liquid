@@ -4,10 +4,8 @@
   display: flex;
   gap: 10px;
   margin: auto;
-  /* overflow-x: auto;
-  overflow-y: visible; */
+  overflow-x: auto;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none;
 }
 
 .recipe {
@@ -24,21 +22,22 @@
   width: 100%;
 }
 
-.recipe-img img {
+.recipe-thumbnail img {
   max-width: 100%;
   object-fit: cover;
 }
 
 .recipe p {
   width: 100%;
+  height: 60px;
+  display: grid;
+  place-items: center;
   position: absolute;
   color: white;
-  text-align: center;
   bottom: 0;
   font-family: 'AlternateGotNo3D';
-  font-size: 24px;
-  line-height: 34px;
-  padding-bottom: 4px;
+  font-size: 28px;
+  text-transform: uppercase;
 }
 
 .recipe-opacity {
@@ -46,32 +45,59 @@
   position: absolute;
   bottom: 0;
   background-color: rgba(1, 1, 1, 0.7);
-  height: 40px;
+  height: 60px;
 }
 
 .mt-48 {
   margin-top: 48px;
 }
 
-/* .recipe-1 {
-  background-image: url("{{ 'hotcoffee.jpeg' | asset_url }}");
+.recipe-detail-container {
+  max-width: 1200px;
+  margin: 120px auto 0;
 }
 
-.recipe-2 {
-  background-image: url("{{ 'icedcoffee.jpeg' | asset_url }}");
+.recipe-left h2 {
+  font-family: 'AlternateGotNo3D';
+  font-size: 44px;
+  color: var(--clr-theme);
+  margin-bottom: 16px;
 }
 
-.recipe-3 {
-  background-image: url("{{ 'icedlatte.jpeg' | asset_url }}");
+.recipe-detail-container li {
+  margin-bottom: 14px;
+  line-height: 32px;
 }
 
-.recipe-4 {
-  background-image: url("{{ 'affogato.jpeg' | asset_url }}");
-} */
+.recipe-detail-container ol {
+  padding-left: 18px;
+}
 
-/* this is just to make the card centered 
-to make use of the min-width on parent div */
+.recipe-flex {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 80px;
+}
 
-.hidden-text {
-  visibility: hidden;
+.recipe-left {
+  max-width: 525px;
+  max-height: 700px;
+}
+
+.recipe-right {
+  justify-self: end;
+}
+
+.recipe-flex li span {
+  font-family: 'DM Sans';
+  font-weight: 400;
+  letter-spacing: 0.80px;
+}
+
+@media(max-width:1080px) {
+  .recipe-flex {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 40px;
+  }
 }

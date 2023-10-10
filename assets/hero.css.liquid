@@ -29,6 +29,7 @@
   margin-bottom: 40px;
   letter-spacing: 1.5px;
   word-spacing: 4px;
+  line-height: 82px;
 }
 
 .hero-subheading {
@@ -36,6 +37,7 @@
   color: #B59357;
   font-size: 50px;
   margin-bottom: 40px;
+  line-height: 50px;
 }
 
 @media(max-width: 640px) {
@@ -47,5 +49,20 @@
 
   .hero-subheading {
     font-size: 45px;
+  }
+}
+
+/* larger screens */
+@media(min-width: 1441px) {
+  .hero-heading {
+    font-size: 120px;
+    word-spacing: initial;
+    letter-spacing: initial;
+    line-height: 120px;
+  }
+
+  .hero-subheading {
+    font-size: 80px;
+    line-height: 75px;
   }
 }
