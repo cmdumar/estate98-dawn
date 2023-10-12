@@ -1,0 +1,56 @@
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h1 class="cart-heading">Your Cart</h1>
+    <img
+      class="close-btn"
+      src="{{ 'close.svg' | asset_url }}"
+      width="14"
+      height="14"
+      alt="Close button">
+  </div>
+
+  <div class="cart-content">
+    {% form 'cart', cart %}
+      <div class="cart-item-list">
+        {% for item in cart.items %}
+          <div class="cart-item" data-line-item-key="{{ item.key }}">
+            <div class="cart-img">
+              <img src="{{ item.image  | img_url: '100x'}}" alt="{{item.product.title}}">
+            </div>
+            <div class="cart-details">
+              <h1 class="cart-item-title">{{ item.product.title }}</h1>
+              <div class="cart-quantity"></div>
+              <p class="item-type">{{ item.product.description }}</p>
+              <div class="counter">
+                <span class="minus"><img src="{{ 'minus.svg' | asset_url }}" alt=""></span>
+                <input
+                  type="number"
+                  name="quantity"
+                  class="qty"
+                  id="quantity"
+                  min="1"
+                  max="10"
+                  readonly
+                  value="{{ item.quantity }}">
+                <span class="plus"><img src="{{ 'plus.svg' | asset_url }}" alt=""></span>
+              </div>
+              <p class="price dollar-symbol">{{ item.final_line_price | money_without_trailing_zeros }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <button
+        type="submit"
+        class="btn-primart"
+        name="checkout">CHECKOUT</button>
+    {% endform %}
+  </div>
+
+</div>
+{% schema %}
+  {
+    "name": "cart-drawer",
+    "settings": []
+  }
+{% endschema %}

@@ -1,127 +1,130 @@
-{% comment %} This section is for the product section in the Shop page {% endcomment %}
+{% assign productOnetime = all_products['one-time'] %}
+{% assign productMonthly = all_products['monthly'] %}
 
-<div class="product-container">
-  <div class="col-2 product-left">
-    <img
-      src="{{'product1.jpeg' | asset_url}}"
-      alt="Coffee Bottle"
-      width="500"
-      height="450"
-      loading="eager"
-      id="MainImg"
-      class="main-img">
-    <div class="multiple-img-container">
-      <div class="small-img">
-        <img
-          src="{{ 'product1.jpeg' | asset_url }}"
-          alt=""
-          width="142.5"
-          height="110"
-          loading="eager"
-          class="sec-img">
+{% form 'product', productOnetime %}
+  <div class="product-container">
+    <div class="col-2 product-left">
+      <img
+        src="{{'product1.jpeg' | asset_url}}"
+        alt="Coffee Bottle"
+        width="500"
+        height="450"
+        loading="eager"
+        id="MainImg"
+        class="main-img">
+      <div class="multiple-img-container">
+        <div class="small-img">
+          <img
+            src="{{ 'product1.jpeg' | asset_url }}"
+            alt=""
+            width="142.5"
+            height="110"
+            loading="eager"
+            class="sec-img">
+        </div>
+        <div class="small-img">
+          <img
+            src="{{ 'product2.jpeg' | asset_url }}"
+            alt=""
+            width="142.5"
+            height="110"
+            loading="eager"
+            class="sec-img">
+        </div>
+        <div class="small-img">
+          <img
+            src="{{ 'product3.jpeg' | asset_url }}"
+            alt=""
+            width="142.5"
+            height="110"
+            loading="eager"
+            class="sec-img">
+        </div>
+        <div class="small-img">
+          <img
+            src="{{ 'product4.jpeg' | asset_url }}"
+            alt=""
+            width="142.5"
+            height="110"
+            loading="eager"
+            class="sec-img">
+        </div>
       </div>
-      <div class="small-img">
-        <img
-          src="{{ 'product2.jpeg' | asset_url }}"
-          alt=""
-          width="142.5"
-          height="110"
-          loading="eager"
-          class="sec-img">
+    </div>
+
+    <div class="col-2 product-right">
+      <div class="tab">
+        <p class="delivery">AUTO DELIVERY</p>
+        <p class="onetime">ONE TIME</p>
       </div>
-      <div class="small-img">
-        <img
-          src="{{ 'product3.jpeg' | asset_url }}"
-          alt=""
-          width="142.5"
-          height="110"
-          loading="eager"
-          class="sec-img">
+      <div class="title-container">
+        <h1 class="title">Ultra Concentrated Coffee</h1>
+        <div class="counter">
+          <span class="qty-mbl">Qty</span>
+          <span class="minus"><img src="{{ 'minus.svg' | asset_url }}" alt=""></span>
+          <input
+            type="number"
+            name="quantity"
+            class="qty"
+            id="quantity"
+            min="1"
+            max="10"
+            value="1"
+            readonly>
+          <span class="plus"><img src="{{ 'plus.svg' | asset_url }}" alt=""></span>
+        </div>
       </div>
-      <div class="small-img">
-        <img
-          src="{{ 'product4.jpeg' | asset_url }}"
-          alt=""
-          width="142.5"
-          height="110"
-          loading="eager"
-          class="sec-img">
+      <div class="reviews">
+        <span>(15112 reviews)</span>
+        <span>&#9734 &#9734 &#9734 &#9734 &#9734</span>
       </div>
+      <p class="money-back">
+        30-Day Money-Back Guarantee
+      </p>
+      <div class="production-container">
+        <a class="production" data-tip="Some text on hover">
+          <img src="{{'roast.svg' | asset_url }}" alt="roast">
+          <span>Roast</span>
+        </a>
+        <a class="production" data-tip="Some text on hover">
+          <img src="{{'process.svg' | asset_url }}" alt="process">
+          <span>Process</span>
+        </a>
+        <a class="production" data-tip="Some text on hover">
+          <img src="{{'elevation.svg' | asset_url }}" alt="elevation">
+          <span>Elevation</span>
+        </a>
+        <a class="production" data-tip="Some text on hover">
+          <img src="{{'varietal.svg' | asset_url }}" alt="varietal">
+          <span>Varietal</span>
+        </a>
+        <a class="production" data-tip="Some text on hover">
+          <img src="{{'notes.svg' | asset_url }}" alt="notes">
+          <span>Notes</span>
+        </a>
+      </div>
+      <p class="product-desc">
+        Indulge in the ancestral essence of Estate '98, a specialty Ultra Concentrated Coffee (Esencia de Café) meticulously crafted from the finest 100% Strictly High Grown Arabica beans.
+      </p>
+      <div class="total">
+        <span>TOTAL</span>
+        <div>
+          <span class="dollar-symbol">$</span>
+          <span class="price">{{ productOnetime.price | money_without_currency }}</span>
+          <span class="month">/MO</span>
+        </div>
+      </div>
+      <div class="coupon">
+        <input type="text" placeholder="Enter coupon code here">
+        <button class="apply">APPLY</button>
+      </div>
+      <select style="display: none;" name="id">
+        <option value="{{ productOnetime.variants[0].id }}"></option>
+      </select>
+      <button type="submit" class="shop-now">
+        SHOP NOW
+      </button>
     </div>
   </div>
 
-  <div class="col-2 product-right">
-    <div class="tab">
-      <p class="delivery">AUTO DELIVERY</p>
-      <p class="onetime">ONE TIME</p>
-    </div>
-    <div class="title-container">
-      <h1 class="title">Ultra Concentrated Coffee</h1>
-      <div class="counter">
-        <span class="qty-mbl">Qty</span>
-        <span class="minus"><img src="{{ 'minus.png' | asset_url }}" alt=""></span>
-        <input
-          type="number"
-          inputmode="numeric"
-          max="10"
-          min="1"
-          step="1"
-          class="qty"
-          id="num-count"
-          value="1"
-          disabled>
-        <span class="plus"><img src="{{ 'plus.png' | asset_url }}" alt=""></span>
-      </div>
-    </div>
-    <div class="reviews">
-      <span>(15112 reviews)</span>
-      <span>&#9734 &#9734 &#9734 &#9734 &#9734</span>
-    </div>
-    <p class="money-back">
-      30-Day Money-Back Guarantee
-    </p>
-    <div class="production-container">
-      <a class="production" data-tip="Some text on hover">
-        <img src="{{'roast.svg' | asset_url }}" alt="roast">
-        <span>Roast</span>
-      </a>
-      <a class="production" data-tip="Some text on hover">
-        <img src="{{'process.svg' | asset_url }}" alt="process">
-        <span>Process</span>
-      </a>
-      <a class="production" data-tip="Some text on hover">
-        <img src="{{'elevation.svg' | asset_url }}" alt="elevation">
-        <span>Elevation</span>
-      </a>
-      <a class="production" data-tip="Some text on hover">
-        <img src="{{'varietal.svg' | asset_url }}" alt="varietal">
-        <span>Varietal</span>
-      </a>
-      <a class="production" data-tip="Some text on hover">
-        <img src="{{'notes.svg' | asset_url }}" alt="notes">
-        <span>Notes</span>
-      </a>
-    </div>
-    <p class="product-desc">
-      Indulge in the ancestral essence of Estate '98, a specialty Ultra Concentrated Coffee (Esencia de Café) meticulously crafted from the finest 100% Strictly High Grown Arabica beans.
-    </p>
-    <div class="total">
-      <span>TOTAL</span>
-      <div>
-        <span class="dollar-symbol">$</span>
-        <span class="price">{{ collections['frontpage'].products[0].price | money_without_currency }}</span>
-        <span class="month">/MO</span>
-      </div>
-    </div>
-    <div class="coupon">
-      <input type="text" placeholder="Enter coupon code here">
-      <button class="apply">APPLY</button>
-    </div>
-    <div class="shop-now">
-      SHOP NOW
-    </div>
-    <button id="shop-pay-button" class="shop-pay-button">
-      Shop Pay
-    </button>
-  </div>
-</div>
+{% endform %}
