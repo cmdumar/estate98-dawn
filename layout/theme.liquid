@@ -8,44 +8,28 @@
     {{ 'style.css' | asset_url | stylesheet_tag }}
     {{ 'featured.css' | asset_url | stylesheet_tag }}
     {{ 'beverage.css' | asset_url | stylesheet_tag }}
-    {{ 'product.css' | asset_url | stylesheet_tag }}
+    {{ 'product-detail.css' | asset_url | stylesheet_tag }}
     {{ 'convenience.css' | asset_url | stylesheet_tag }}
     {{ 'reviews.css' | asset_url | stylesheet_tag }}
     {{ 'recipe.css' | asset_url | stylesheet_tag }}
-    {{ 'recipedetail.css' | asset_url | stylesheet_tag }}
     {{ 'faq.css' | asset_url | stylesheet_tag }}
     {{ 'hero.css' | asset_url | stylesheet_tag }}
     {{ 'homesec1.css' | asset_url | stylesheet_tag }}
     {{ 'generations.css' | asset_url | stylesheet_tag }}
     {{ 'history.css' | asset_url | stylesheet_tag }}
     {{ 'story.css' | asset_url | stylesheet_tag }}
-    {{ 'recipedetail.css' | asset_url | stylesheet_tag }}
+    {{ 'cart-drawer.css' | asset_url | stylesheet_tag }}
     {{ 'footer.css' | asset_url | stylesheet_tag }}
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
+    <div class="backdrop"></div>
     {% section 'navbar' %}
     {{ content_for_layout }}
     {% section 'footer' %}
-    {{ 'script.js' | asset_url | script_tag }}
-    {{ 'product.js' | asset_url | script_tag }}
-    <script src="https://cdn.shopify.com/buy-button/latest/buy-button-storefront.min.js"></script>
-    <script>
-      ShopifyBuy.UI.onReady(function(ui) {
-        ui.createComponent('button', {
-          id: [8190553030962],
-          node: document.getElementById('shop-pay-button'),
-          options: {
-            product: {
-              variantId: [44705736982834],
-              quantity: 1
-            },
-            text: {
-              button: 'Shop Pay'
-            }
-          }
-        });
-      });
-    </script>
+    <script src="{{ 'product.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'script.js' | asset_url }}" defer="defer"></script>
+    {% section 'cart-drawer' %}
   </body>
 </html>
