@@ -20,7 +20,13 @@
             <div class="cart-details">
               <h1 class="cart-item-title">{{ item.product.title }}</h1>
               <div class="cart-quantity"></div>
-              <p class="item-type">{{ item.product.description }}</p>
+              <p class="item-type">
+                {% if item.selling_plan_allocation.price_adjustments[0].price < item.line_price %}
+                  AUTO DELIVERY
+                {% else %}
+                  ONE TIME
+                {% endif %}
+              </p>
               <div class="counter">
                 <span class="minus"><img src="{{ 'minus.svg' | asset_url }}" alt=""></span>
                 <input
@@ -42,7 +48,7 @@
 
       <button
         type="submit"
-        class="btn-primart"
+        class="btn-primary center"
         name="checkout">CHECKOUT</button>
     {% endform %}
   </div>
@@ -50,7 +56,6 @@
 </div>
 {% schema %}
   {
-    "name": "cart-drawer",
-    "settings": []
+    "name": "cart-drawer"
   }
 {% endschema %}

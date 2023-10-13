@@ -1,7 +1,6 @@
-{% assign productOnetime = all_products['one-time'] %}
-{% assign productMonthly = all_products['monthly'] %}
+{% assign product = all_products['speciality-ultra-concentrated-coffee'] %}
 
-{% form 'product', productOnetime %}
+{% form 'product', product %}
   <div class="product-container">
     <div class="col-2 product-left">
       <img
@@ -59,20 +58,20 @@
       </div>
       <div class="title-container">
         <h1 class="title">Ultra Concentrated Coffee</h1>
-        <div class="counter">
-          <span class="qty-mbl">Qty</span>
-          <span class="minus"><img src="{{ 'minus.svg' | asset_url }}" alt=""></span>
-          <input
-            type="number"
-            name="quantity"
-            class="qty"
-            id="quantity"
-            min="1"
-            max="10"
-            value="1"
-            readonly>
-          <span class="plus"><img src="{{ 'plus.svg' | asset_url }}" alt=""></span>
-        </div>
+        {% comment %} <div class="counter">
+        <span class="qty-mbl">Qty</span>
+        <span class="minus"><img src="{{ 'minus.svg' | asset_url }}" alt=""></span>
+        <input
+        type="number"
+        name="quantity"
+        class="qty"
+        id="quantity"
+        min="1"
+        max="10"
+        value="1"
+        readonly>
+        <span class="plus"><img src="{{ 'plus.svg' | asset_url }}" alt=""></span>
+        </div> {% endcomment %}
       </div>
       <div class="reviews">
         <span>(15112 reviews)</span>
@@ -109,8 +108,9 @@
       <div class="total">
         <span>TOTAL</span>
         <div>
-          <span class="dollar-symbol">$</span>
-          <span class="price">{{ productOnetime.price | money_without_currency }}</span>
+          {% comment %} <span class="dollar-symbol">$</span> {% endcomment %}
+          <span class="price-selling-plan">{{ product.variants[0].selling_plan_allocations[0].price | money_without_trailing_zeros }}</span>
+          <span class="price-normal">{{ product.price | money_without_trailing_zeros }}</span>
           <span class="month">/MO</span>
         </div>
       </div>
@@ -119,8 +119,14 @@
         <button class="apply">APPLY</button>
       </div>
       <select style="display: none;" name="id">
-        <option value="{{ productOnetime.variants[0].id }}"></option>
+        <option value="{{ product.variants[0].id }}"></option>
       </select>
+      <input
+        style="display: none;"
+        type="text"
+        id="plan"
+        name="selling_plan"
+        value="{{ product.variants[0].selling_plan_allocations[0].selling_plan.id }}">
       <button type="submit" class="shop-now">
         SHOP NOW
       </button>
