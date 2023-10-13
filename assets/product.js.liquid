@@ -2,7 +2,11 @@ const backdrop = document.querySelector('.backdrop')
 const cartDrawer = document.querySelector('.cart-drawer')
 const closeBtn = document.querySelector('.close-btn')
 const shopNowBtn = document.querySelector('.shop-now')
+let monthlyPrice;
+let price;
 
+
+// const monthlyPrice = product.variants[0].selling_plan_allocations[0].price
 closeBtn.addEventListener('click', closeCartDrawer )
 backdrop.addEventListener('click', closeCartDrawer)
 
@@ -52,7 +56,6 @@ function updateCartQuantities() {
 
     document.querySelectorAll(".counter span").forEach((button) => {
       button.addEventListener("click", async () => {
-        console.log('clicked')
         // Get line item key
         const rootItem = button.parentElement.parentElement.parentElement;
         const key = rootItem.getAttribute("data-line-item-key");
@@ -67,12 +70,12 @@ function updateCartQuantities() {
         );
         const newQuantity = isUp ? currentQuantity + 1 : currentQuantity - 1;
 
-        // Ajax update\
+        // Ajax update
         const res = await fetch("/cart/update.js", {
           method: "post",
           headers: {
             Accept: "application/json",
-            "Content-Type": "application/json",
+                    "Content-Type": "application/json",
           },
           body: JSON.stringify({ updates: { [key]: newQuantity } }),
         });
@@ -83,7 +86,6 @@ function updateCartQuantities() {
       });
     });
 }
-
 
 
 //product detail section
@@ -111,8 +113,15 @@ smallImgs[3].onclick = function() {
 delivery = document.querySelector('.delivery')
 oneTime = document.querySelector('.onetime')
 month = document.querySelector('.month')
+priceNormal = document.querySelector('.price-normal')
+priceSellingPlan = document.querySelector('.price-selling-plan')
+sellingPlan = document.querySelector('#plan')
+
 
 oneTime.onclick = function() {
+    sellingPlan.setAttribute('value', '');
+    priceNormal.style.display = 'inline-block'
+    priceSellingPlan.style.display = 'none' 
     delivery.style.backgroundColor = 'white'
     delivery.style.color = 'black'
     oneTime.style.backgroundColor = 'black'
@@ -121,6 +130,12 @@ oneTime.onclick = function() {
 }
 
 delivery.onclick = function() {
+    jQuery.getJSON(window.Shopify.routes.root + 'products/speciality-ultra-concentrated-coffee.js', function(product) {
+        sellingPlanId = product.variants[0].selling_plan_allocations[0].selling_plan_id
+        sellingPlan.setAttribute('value', sellingPlanId );
+    });
+    priceSellingPlan.style.display = 'inline-block' 
+    priceNormal.style.display = 'none'
     oneTime.style.backgroundColor = 'white'
     oneTime.style.color = 'black'
     delivery.style.backgroundColor = 'black'
@@ -128,11 +143,11 @@ delivery.onclick = function() {
     month.style.display = 'inline'
 }
 
-// quantity 
+
 // qty = document.querySelector('.qty')
 // plus = document.querySelector('.plus')
 // minus = document.querySelector('.minus')
-// price = parseInt(document.querySelector('.price').textContent)
+
 
 // value = 1
 

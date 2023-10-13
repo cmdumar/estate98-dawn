@@ -199,9 +199,14 @@
 }
 
 .price,
-.dollar-symbol {
-  display: inline-block;
+.dollar-symbol,
+.price-selling-plan,
+.price-normal {
   color: var(--clr-theme);
+}
+
+.price-normal {
+  display: none;
 }
 
 .coupon {
@@ -288,7 +293,7 @@
 
 @media(max-width:640px) {
   .product-container {
-    padding: 120px 0;
+    padding: 120px 0 0;
   }
   .sec-img {
     height: auto;
