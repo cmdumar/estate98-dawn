@@ -11,6 +11,9 @@
 
   <div class="cart-content">
     {% form 'cart', cart %}
+      {% if cart.item_count == 0 %}
+        <p class="cart-drawer-empty">Your cart is empty</p>
+      {% else %}
       <div class="cart-item-list">
         {% for item in cart.items %}
           <div class="cart-item" data-line-item-key="{{ item.key }}">
@@ -40,16 +43,30 @@
                   value="{{ item.quantity }}">
                 <span class="plus"><img src="{{ 'plus.svg' | asset_url }}" alt=""></span>
               </div>
-              <p class="price dollar-symbol">{{ item.final_line_price | money_without_trailing_zeros }}</p>
+              <div style= "margin-top: 12px" class="total">
+                <span>TOTAL</span>
+                <p class="price dollar-symbol">{{ item.final_line_price | money_without_trailing_zeros }}</p>
+              </div>
             </div>
           </div>
         {% endfor %}
       </div>
 
-      <button
-        type="submit"
-        class="btn-primary center"
-        name="checkout">CHECKOUT</button>
+      <footer class="cart-drawer-footer">
+          {% if cart.total_discounts > 0 %}
+            <div class="cart-drawer-footer-row">
+              <h3>Discounts</h3>
+              <span>{{ cart.total_discounts | money }}</span>
+            </div>
+          {% endif %}
+          <div class="cart-drawer-footer-row">
+            <h3 class="subtotal">Subtotal</h3>
+            <span class="cart-final-price">{{ cart.total_price | money }}</span>
+          </div>
+          <button type="submit" name="checkout" class="shop-now">CHECKOUT</button>
+        </footer>
+      
+      {% endif %}
     {% endform %}
   </div>
 
