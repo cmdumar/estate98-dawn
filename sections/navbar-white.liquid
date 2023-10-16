@@ -4,35 +4,26 @@
   <div class="logo">
     <a href="/">
       <img
-        class="logo-black"
+        class="logo-white"
         width="148"
         height="81"
         loading="eager"
-        src={{ "estate-logo.svg" | asset_url }}
+        src={{ "logo-white.svg" | asset_url }}
         alt="{{ shop.name }}" />
     </a>
-    <a href="/">
-    <img
-      class="logo-white"
-      width="148"
-      height="81"
-      loading="eager"
-      src={{ "logo-white.svg" | asset_url }}
-      alt="{{ shop.name }}" />
-  </a>
   </div>
   <ul class="nav">
    {% comment %} {% for link in linklists.main-menu.links %}
       <li class="nav-item"><a class="nav-link" href="{{ link.url }}">{{ link.title }}</a></li>
     {% endfor %}  {% endcomment %}
     <li class="nav-item">
-      <a href="/pages/shop" class="nav-link">SHOP</a>
+      <a href="/pages/shop" class="nav-link-white">SHOP</a>
     </li>
     <li class="nav-item">
-      <a href="/pages/craft" class="nav-link">OUR CRAFT</a>
+      <a href="/pages/craft" class="nav-link-white">OUR CRAFT</a>
     </li>
     <li class="nav-item">
-      <a href="/pages/craft" class="nav-link">OUR STORY</a>
+      <a href="/pages/story" class="nav-link-white">OUR STORY</a>
     </li>
   </ul>
   <div class="mbl-menu">
