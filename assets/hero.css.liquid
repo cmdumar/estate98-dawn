@@ -1,3 +1,4 @@
+
 #background-video {
   width: 100vw;
   min-height: 100vh;
@@ -58,6 +59,11 @@
 }
 
 @media(max-width: 640px) {
+
+  .hero-content {
+    top: 60%;
+  }
+  
   .hero-heading {
     font-size: 60px;
     word-spacing: initial;
@@ -72,6 +78,7 @@
 
 /* larger screens */
 @media(min-width: 1441px) {
+
   .hero-heading {
     font-size: 120px;
     word-spacing: initial;
@@ -83,4 +90,48 @@
     font-size: 80px;
     line-height: 75px;
   }
+}
+
+/* landscape tablet */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+ 
+    .hero-heading {
+      font-size: 32px;
+      line-height: 32px;
+    }
+
+    .hero-subheading {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+}
+
+/* mobile landscape */
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+    #background-video {
+      height: 200vh;
+    }
+
+    .hero-heading {
+      font-size: 32px;
+      line-height: 32px;
+    }
+
+    .hero-subheading {
+      font-size: 24px;
+      line-height: 24px;
+    }
+
+
 }
