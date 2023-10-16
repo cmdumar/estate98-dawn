@@ -17,7 +17,14 @@
             </p>
         </div>
         <div class="flex-70">
-            <img src="{{ 'cultivate.jpeg' | asset_url }}" alt="cultivate">
+          <video
+          class="promo-video"
+            autoplay
+            loop
+            muted
+          >
+          <source src="{{ 'cultivate.mp4' | asset_url }}" type="video/mp4">
+      </video>
         </div>
     </div>
     <div class="flex-image-first">

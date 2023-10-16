@@ -22,9 +22,18 @@
   </a>
   </div>
   <ul class="nav">
-    {% for link in linklists.main-menu.links %}
+   {% comment %} {% for link in linklists.main-menu.links %}
       <li class="nav-item"><a class="nav-link" href="{{ link.url }}">{{ link.title }}</a></li>
-    {% endfor %}
+    {% endfor %}  {% endcomment %}
+    <li class="nav-item">
+      <a href="/pages/shop" class="nav-link">SHOP</a>
+    </li>
+    <li class="nav-item">
+      <a href="/pages/craft" class="nav-link">OUR CRAFT</a>
+    </li>
+    <li class="nav-item">
+      <a href="/pages/craft" class="nav-link">OUR STORY</a>
+    </li>
   </ul>
   <div class="mbl-menu">
     <div class="bar"></div>

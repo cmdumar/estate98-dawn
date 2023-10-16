@@ -3,6 +3,22 @@
   padding: 64px 24px;
 }
 
+.video-container {
+  max-width: 500px;
+  margin: 40px auto 0;
+}
+
+.promo-video {
+  width: 100%;
+  height: 100%;
+}
+
+@media(max-width: 1240px) {
+  .video-container {
+      height: initial;
+  }
+}
+
 .beverage {
   margin-bottom: 2rem;
   margin-top: 2rem;
@@ -63,6 +79,7 @@
   .beverage {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
   }
 
   .beverage-list {
