@@ -8,7 +8,15 @@
     </h1>
     <p>Indulge in the ancestral essence of Estate '98, a specialty Ultra Concentrated Coffee (Esencia de Café) meticulously crafted from the finest 100% Strictly High Grown Arabica beans. Experience unmatched convenience as you create your favorite coffee beverages with ease, simply by adding a tablespoon or two to water or milk. Cultivated on sprawling acres of coffee farmland in the verdant mountains of El Salvador, Estate '98 embodies the legacy of an ancestral 'Esencia de Café' recipe, cherished and handed down through generations.</p>
   </div>
-  <div class="flex-image">
-    <img src="{{ 'ultra2.png' | asset_url }}" alt="Ultra concentrated coffee">
+  <div class="video-container">
+    <video
+      class="promo-video"
+        autoplay
+        loop
+        muted
+        poster="{{ 'ultra2.png' | asset_url }}"
+      >
+      <source src="{{ 'promo.mp4' | asset_url }}" type="video/mp4">
+  </video>
   </div>
 </div>

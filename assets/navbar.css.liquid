@@ -32,11 +32,15 @@
   padding: 10px 0;
 }
 
+.logo-black {
+  display: none;
+}
+
 .logo img {
   width: 100%;
 }
 
-.nav-item a {
+.nav-link{
   color: #101010;
   font-family: 'Alternate Gothic Cond ATF';
   letter-spacing: 1.2px;
@@ -48,9 +52,9 @@
   transition: all 0.6s;
 }
 
-.nav-item a:hover {
-  color: var(--clr-theme);
-  transform: scale(1.1);
+.nav-link:hover {
+  color: var(--clr-theme) !important;
+  transform: scale(1.1) !important;
 }
 
 .mbl-menu {
@@ -75,6 +79,7 @@
   .mbl-menu {
     display: block;
   }
+
   .nav {
     position: absolute;
     top: 80px;
@@ -92,7 +97,7 @@
     overflow: hidden;
   }
 
-  .nav.active {
+  .nav.show-mbl-menu {
     height: 30vh;
     opacity: 1;
   }

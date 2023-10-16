@@ -44,6 +44,14 @@ input[type=number] {
 }
 
 @font-face {
+  font-family: 'AlternateGotNo1D';
+  src: url('./AlternateGotNo1dRegular.woff2') format('woff2'), url('./AlternateGotNo1dRegular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'DM Sans';
   src: url('./DMSans-Regular.woff2') format('woff2'), url('./DMSans-Regular.woff') format('woff');
   font-weight: 400;
@@ -130,17 +138,18 @@ svg {
 }
 
 .heading-primary {
-  font-size: 58px;
+  font-size: 60px;
   font-family: 'Alternate Gothic Cond ATF';
   text-align: center;
   margin-bottom: 1.5rem;
-  letter-spacing: 1.80px;
+  /* letter-spacing: 1.80px; */
   line-height: 60px;
 }
 
 @media(min-width: 1560px) {
   .heading-primary {
-    font-size: 78px;
+    font-size: 90px;
+    line-height: 90px;
   }
 }
 
@@ -178,6 +187,10 @@ svg {
   margin-top: 20px;
 }
 
+.mb-30 {
+  margin-bottom: 30px;
+}
+
 .mb-60 {
   margin-bottom: 60px;
 }
@@ -206,12 +219,17 @@ svg {
   margin: 50px auto 100px;
   justify-content: center;
   align-items: center;
-  gap: 30px
+  gap: 30px;
 }
 
-.flex-text-first > *,
-.flex-image-first > * {
+.flex-content-left,
+.flex-content-right,
+.flex-image-first {
   flex-basis: 50%;
+}
+
+.align-self-start {
+  align-self: start;
 }
 
 .flex-image {
@@ -225,8 +243,16 @@ svg {
   margin-bottom: 30px;
 }
 
-.pr-30 {
+.pr-60 {
   padding-right: 60px;
+}
+
+.pl-60 {
+  padding-left: 60px;
+}
+
+.line-height-32 {
+  line-height: 32px;
 }
 
 .flex-image img {
@@ -271,6 +297,14 @@ svg {
   font-size: 44px;
   color: var(--clr-theme);
   margin-bottom: 16px;
+  line-height: 44px;
+}
+
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 @media(max-width: 1240px) {
@@ -283,11 +317,20 @@ svg {
     margin: 30px auto 50px;
   }
 
+  .pr-60 {
+    padding-right: initial;
+  }
+  
+  .pl-60 {
+    padding-left: initial;
+  }
+
 
   .center {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
   .heading-secondary {
