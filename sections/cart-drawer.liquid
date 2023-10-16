@@ -23,13 +23,13 @@
             <div class="cart-details">
               <h1 class="cart-item-title">{{ item.product.title }}</h1>
               <div class="cart-quantity"></div>
-              <p class="item-type">
+              {% comment %} <p class="item-type">
                 {% if item.selling_plan_allocation.price_adjustments[0].price < item.line_price %}
                   AUTO DELIVERY
                 {% else %}
                   ONE TIME
                 {% endif %}
-              </p>
+              </p> {% endcomment %}
               <div class="counter">
                 <span class="minus"><img src="{{ 'minus.svg' | asset_url }}" alt=""></span>
                 <input
