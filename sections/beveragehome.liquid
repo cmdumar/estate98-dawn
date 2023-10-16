@@ -1,13 +1,15 @@
 <div class="beverage-container">
-  <div class="original-bottle">
-    <img
-      src="{{ 'bottle.png' | asset_url }}"
-      alt="bottle"
-      width="400"
-      height="500"
-      loading="eager">
-  </div>
   <h1 class="heading-primary">Make Any Coffee Beverage in Seconds</h1>
+  <div class="video-container">
+    <video
+      class="promo-video"
+        autoplay
+        loop
+        muted
+      >
+      <source src="{{ 'sequence.mp4' | asset_url }}" type="video/mp4">
+  </video>
+  </div>
   <div class="beverage">
     <div class="beverage-list">
       <div class="icon">
@@ -46,8 +48,8 @@
         <img
           src="{{ 'glass.svg' | asset_url }}"
           alt="cup"
-          width="70"
-          height="100"
+          width="50"
+          height="50"
           loading="eager"
           class="glass-img">
       </div>
