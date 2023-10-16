@@ -1,18 +1,24 @@
 <div class="footer">
-  <div class="join">
+  <div class="join z-2">
     <h1 class="heading-primary theme-clr">JOIN LA FAMILIA</h1>
     <div class="input">
-      <form class="subscribe-form" action="">
-        <label for="email"></label>
-        <input
-          type="email"
-          id="email"
-          placeholder="ENTER YOUR EMAIL">
-        <button class="btn" type="submit">SUBSCRIBE</button>
-      </form>
+      {% form 'contact' , class: 'subscribe-form' %}
+        {{ form.errors | default_errors }}      
+          <label for="email"></label>
+          <input
+            type="email"
+            id="email"
+            name="contact[email]"
+            placeholder="ENTER YOUR EMAIL">
+          <input class="btn" type="submit" value="SUBSCRIBE" />
+      {% endform %}
     </div>
     <p>Receive a 15% discount on your first order and stay up to date with our latest news and updates.</p>
   </div>
+  <div class="overlay"></div>
+</div>
+
+
   <div class="footer-2">
     <div class="logo2">
       <a href="/">
@@ -25,4 +31,3 @@
       <a href=""><img src="{{ 'youtube.svg' | asset_url }}" alt="youtube"></a>
     </div>
   </div>
-</div>

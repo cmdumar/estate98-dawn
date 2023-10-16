@@ -1,38 +1,91 @@
 .generations-container {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("{{ 'generations.jpeg' | asset_url }}");
   background-size: cover;
   background-position: top;
   position: relative;
   margin-bottom: 60px;
+  position: relative;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-color: rgba(1,1,1,0.5);
+
 }
 
 .generations-content {
   position: absolute;
-  max-width: 800px;
+  width: 85%;
   top: 50%;
-  left: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: auto;
+  z-index: 2;
 }
 
 .generations-title {
-  font-family: 'Alternate Gothic Cond ATF';
-  font-size: 72px;
+  font-family: 'AlternateGotNo1D';
+  font-size: 80px;
+  line-height: 80px;
   color: white;
-  line-height: 1.2;
   text-align: left;
-  align-self: end;
-  padding-bottom: 10px;
-  flex-basis: 70%
+  /* align-self: end; */
 }
 
 .logo3 {
-  flex-basis: 30%;
+  width: 380px;
+  min-height: 240px;
 }
 
-@media(max-width: 920px) {
+.logo3 img {
+  width: 100%;
+  height: 100%;
+}
+
+@media(min-width: 1736px) {
+  .generations-container {
+    min-height: 80vh;
+  }
+
+  .generations-title {
+    font-size: 110px;
+    line-height: 110px;
+  }
+
+  .logo3 {
+    width: 500px;
+  }
+}
+
+
+@media(max-width: 1306px) {
+
+  /* .logo3 {
+    align-self: center;
+  } */
+
+  .generations-title {
+    font-size: 62px;
+    line-height: 62px;
+  }
+  .logo3 {
+    max-width: 280px;
+    height: auto;
+  }
+
+}
+
+@media(max-width: 1020px) {
   .generations-content {
     flex-direction: column;
     align-items: center;
@@ -40,12 +93,20 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .generations-title {
+    text-align: center;
+  }
 }
 
 @media(max-width: 490px) {
   .generations-title {
-    font-size: 36px;
+    font-size: 40px;
+    line-height: 40px;
     text-align: center;
+  }
+  .generations-content {
+    gap: 0;
   }
 
   .generations-container {
@@ -53,6 +114,6 @@
   }
 
   .logo3 {
-    width: 180px;
+    max-width: 180px;
   }
 }

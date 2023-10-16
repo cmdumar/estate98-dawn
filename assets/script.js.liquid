@@ -1,11 +1,44 @@
-
 // navbar mobile menu
 
 mblMenu = document.querySelector('.mbl-menu')
 
 mblMenu.onclick = () => {
     nav = document.querySelector('.nav')
-    nav.classList.toggle('active')
+    nav.classList.toggle('show-mbl-menu')
 }
+
+navLinks = document.querySelectorAll('.nav-link')
+logoBlack = document.querySelector('.logo-black')
+logoWhite = document.querySelector('.logo-white')
+currentLocation = location.href
+
+$(document).ready(function() {
+        navLinks.forEach(link => {
+        if(currentLocation.includes('shop') || currentLocation.includes('products')) {
+            document.querySelector('.logo-white').style.display = 'none'
+            document.querySelector('.logo-black').style.display = 'block'
+            link.stye.color = 'black'
+
+        } else {
+            document.querySelector('.logo-black').style.display = 'none'
+            document.querySelector('.logo-white').style.display = 'block'
+            link.style.color = 'white'
+        }
+
+        // if(link.href == currentLocation) {
+        //     link.style.color = '#a32b2a'
+        // }
+    })
+});
+
+
+
+
+
+
+
+
+
+
 
 

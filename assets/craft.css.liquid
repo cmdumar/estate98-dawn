@@ -1,0 +1,40 @@
+.craft-hero {
+    width: 100vw;
+    height: 80vh;
+    background-image: url("{{ 'craft-hero.jpeg' | asset_url }}");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  .flex-30 {
+    flex-basis: 40%;
+  }
+
+  .flex-70 {
+    flex-basis: 60%;
+  }
+
+  .craft-p-left {
+    padding-right: 60px;
+  }
+
+  .craft-p-right {
+    padding-left: 60px;
+  }
+
+@media(max-width: 1240px){
+    .flex-30 p, .flex-30 h1  {
+        text-align: center;
+        padding: 0;
+    }
+
+    .flex-30 p {
+        padding: 0;
+    }
+
+
+}
+  
