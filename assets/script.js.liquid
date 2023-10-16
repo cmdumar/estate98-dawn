@@ -1,6 +1,7 @@
 // navbar mobile menu
 
 mblMenu = document.querySelector('.mbl-menu')
+mblMenuBars = document.querySelectorAll('.bar')
 
 mblMenu.onclick = () => {
     nav = document.querySelector('.nav')
@@ -18,11 +19,17 @@ $(document).ready(function() {
             document.querySelector('.logo-white').style.display = 'none'
             document.querySelector('.logo-black').style.display = 'block'
             link.stye.color = 'black'
+            mblMenuBars.forEach(bar => {
+                bar.style.backgroundColor = 'black'
+            })
 
         } else {
             document.querySelector('.logo-black').style.display = 'none'
             document.querySelector('.logo-white').style.display = 'block'
             link.style.color = 'white'
+            mblMenuBars.forEach(bar => {
+                bar.style.backgroundColor = 'white'
+            })
         }
 
         // if(link.href == currentLocation) {
