@@ -1,0 +1,34 @@
+{{ 'navbar.css' | asset_url | stylesheet_tag }}
+
+<navbar class="navbar">
+  <div class="logo">
+    <a href="/">
+      <img
+        class="logo-black"
+        width="148"
+        height="81"
+        loading="eager"
+        src={{ "estate-logo.svg" | asset_url }}
+        alt="{{ shop.name }}" />
+    </a>
+  </div>
+  <ul class="nav">
+   {% comment %} {% for link in linklists.main-menu.links %}
+      <li class="nav-item"><a class="nav-link" href="{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}  {% endcomment %}
+    <li class="nav-item">
+      <a href="/pages/shop" class="nav-link-black">SHOP</a>
+    </li>
+    <li class="nav-item">
+      <a href="/pages/craft" class="nav-link-black">OUR CRAFT</a>
+    </li>
+    <li class="nav-item">
+      <a href="/pages/story" class="nav-link-black">OUR STORY</a>
+    </li>
+  </ul>
+  <div class="mbl-menu">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+</navbar>

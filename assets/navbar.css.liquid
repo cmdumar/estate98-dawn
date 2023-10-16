@@ -32,30 +32,40 @@
   padding: 10px 0;
 }
 
-.logo-black {
-  display: none;
-}
-
 .logo img {
   width: 100%;
 }
+.nav-item {
+  padding-left: 30px;
+}
 
-.nav-link{
-  color: #101010;
+.nav-link-white, .nav-link-black{
   font-family: 'Alternate Gothic Cond ATF';
   letter-spacing: 1.2px;
   text-decoration: none;
   font-size: 24px;
   text-transform: uppercase;
-  padding-left: 30px;
   display: inline-block;
   transition: all 0.6s;
 }
 
-.nav-link:hover {
+.nav-link-white {
+  color: white;
+}
+
+.nav-link-black {
+  color: black;
+}
+
+.nav-link-black:hover, .nav-link-white:hover {
   color: var(--clr-theme);
   transform: scale(1.1);
 }
+
+/* for adding active class to nav item */
+/* .nav-link-white.header__active-menu-item, .nav-link-black.header__active-menu-item {
+  border-bottom: 3px solid var(--clr-theme);
+} */
 
 .mbl-menu {
   cursor: pointer;
