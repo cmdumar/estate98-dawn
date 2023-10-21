@@ -3,7 +3,14 @@
     <h1 class="heading-primary theme-clr">JOIN LA FAMILIA</h1>
     <div class="input">
       {% form 'contact' , class: 'subscribe-form' %}
-        
+        {%- if form.posted_successfully? -%}
+          <div class="popup">
+            <img src="{{ 'tick.png' |  asset_url }}" width="80" height="80" alt="Success" loading="eager">
+            <h2 class="heading-secondary">Thank You</h2>
+            <p>You will receive an email shortly</p>
+            <button class="btn-popup" type="button">OK</button>
+          </div>
+        {% endif %}
         {{ form.errors | default_errors }}      
           <label for="email"></label>
           <input
