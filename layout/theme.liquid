@@ -20,18 +20,16 @@
     {{ 'story.css' | asset_url | stylesheet_tag }}
     {{ 'craft.css' | asset_url | stylesheet_tag }}
     {{ 'cart-drawer.css' | asset_url | stylesheet_tag }}
-    {{ 'icon-success.css' | asset_url | stylesheet_tag }}
     {{ 'footer.css' | asset_url | stylesheet_tag }}
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer="defer"></script>
   </head>
   <body>
     <div class="backdrop"></div>
     {{ content_for_layout }}
     {% section 'footer' %}
     {% section 'cart-drawer' %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer="defer"></script>
-    <script src="{{ 'jquery.min.js' | asset_url }}" defer></script>
-    <script src="{{ 'script.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'product.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'script.js' | asset_url }}" defer></script>
+    <script src="{{ 'product.js' | asset_url }}" defer></script>
   </body>
 </html>
