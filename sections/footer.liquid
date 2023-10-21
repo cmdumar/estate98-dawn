@@ -1,29 +1,31 @@
 <div class="footer">
   <div class="join z-2">
-    <h1 class="heading-primary theme-clr">JOIN LA FAMILIA</h1>
+    <h1 class="heading-primary theme-clr mb-30">JOIN LA FAMILIA</h1>
     <div class="input">
-      {% form 'contact' , class: 'subscribe-form' %}
+      {% form 'customer' %} 
         {%- if form.posted_successfully? -%}
-          
+          {% render 'icon-success' %}
         {% endif %}
-        {{ form.errors | default_errors }}      
+        {{ form.errors | default_errors }} 
+        <div class="subscribe-form">     
           <label for="email"></label>
           <input
             type="email"
             id="email"
             name="contact[email]"
             placeholder="ENTER YOUR EMAIL">
-          <input class="btn" type="submit" value="SUBSCRIBE" />
+          <input class="btn-subscribe" type="submit" value="SUBSCRIBE" />
+        </div>
       {% endform %}
     </div>
     <p>Receive a 15% discount on your first order and stay up to date with our latest news and updates.</p>
   </div>
-  <div class="popup">
-    <img src="{{ 'tick.png' |  asset_url }}" width="80" height="80" alt="Success" loading="eager">
+  {% comment %} <div class="popup">
+    <img src="{{ 'tick.png' | asset_url }}" width="80" height="80" alt="Success" loading="eager">
     <h2 class="heading-secondary">Thank You</h2>
     <p>You will receive an email shortly</p>
     <button class="btn-popup" type="button">OK</button>
-  </div>
+  </div> {% endcomment %}
   <div class="overlay"></div>
 </div>
     <button class="test1">Test</button>
