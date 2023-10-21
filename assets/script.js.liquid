@@ -27,7 +27,9 @@ const contactForm = document.querySelector('form[action="/contact#contact_form"]
 const popup = document.querySelector('.popup')
 const btnPopup = document.querySelector('.btn-popup')
 
-contactForm.addEventListener('submit', () => {
+contactForm.addEventListener('submit', async e => {
+    e.preventDefault()
+    console.log('submitted')
     popup.style.visibility = 'visibile'
 })
 
