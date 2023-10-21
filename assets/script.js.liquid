@@ -1,14 +1,13 @@
 // navbar mobile menu
 
 mblMenu = document.querySelector('.mbl-menu')
-// mblMenuBars = document.querySelectorAll('.bar')
 
 mblMenu.onclick = () => {
     nav = document.querySelector('.nav')
     nav.classList.toggle('show-mbl-menu')
 }
 
-navLinks = document.querySelectorAll('.nav-link')
+// navLinks = document.querySelectorAll('.nav-link')
 
 //for adding active class to nav item
 
@@ -23,19 +22,12 @@ navLinks = document.querySelectorAll('.nav-link')
 
 // contact form
 
-const contactForm = document.querySelector('form[action="/contact#contact_form"]')
-const popup = document.querySelector('.popup')
-const btnPopup = document.querySelector('.btn-popup')
+// const contactForm = document.querySelector('form[action="/contact#contact_form"]')
+// const btnSubscribe = document.querySelector('.btn-subscribe')
+// const popup = document.querySelector('.popup')
+// const btnPopup = document.querySelector('.btn-popup')
 
-contactForm.addEventListener('submit', async e => {
-    e.preventDefault()
-    console.log('submitted')
-    popup.style.visibility = 'visibile'
-})
 
-btnPopup.addEventListener('click', () => {
-    popup.style.visibility = 'hidden'
-})
 
 
 
