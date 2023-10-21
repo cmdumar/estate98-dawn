@@ -117,10 +117,10 @@
           <span class="month">/MO</span>
         </div>
       </div>
-      <div class="coupon">
+      {% comment %} <div class="coupon">
         <input type="text" placeholder="Enter coupon code here">
         <button class="apply">APPLY</button>
-      </div>
+      </div> {% endcomment %}
       <select style="display: none;" name="id">
         <option value="{{ product.variants[0].id }}"></option>
       </select>
