@@ -21,6 +21,22 @@ navLinks = document.querySelectorAll('.nav-link')
 //      });
 //     });
 
+// contact form
+
+const contactForm = document.querySelector('form[action="/contact#contact_form"]')
+const popup = document.querySelector('.popup')
+const btnPopup = document.querySelector('.btn-popup')
+
+contactForm.addEventListener('submit', () => {
+    popup.style.visibility = 'visibile'
+})
+
+btnPopup.addEventListener('click', () => {
+    popup.style.visibility = 'hidden'
+})
+
+
+
 
 
 
