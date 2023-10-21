@@ -74,6 +74,14 @@ input[type=number] {
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Trixie-Text';
+  src: url('./ATrixie-Text-Regular.woff2') format('woff2'), url('./Trixie-Text-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 p {
   font-family: "DM Sans";
   font-weight: 400;
@@ -142,7 +150,7 @@ svg {
   font-family: 'Alternate Gothic Cond ATF';
   text-align: center;
   margin-bottom: 1.5rem;
-  /* letter-spacing: 1.80px; */
+  text-transform: uppercase;
   line-height: 60px;
 }
 
@@ -251,6 +259,10 @@ svg {
   padding-left: 60px;
 }
 
+.pl-100 {
+  padding-left: 100px !important;
+}
+
 .line-height-32 {
   line-height: 32px;
 }
@@ -323,6 +335,10 @@ svg {
   
   .pl-60 {
     padding-left: initial;
+  }
+
+  .pl-100 {
+    padding-left: initial !important;
   }
 
 
