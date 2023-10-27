@@ -2,7 +2,7 @@
   <div class="join z-2">
     <h1 class="heading-primary theme-clr mb-30">JOIN LA FAMILIA</h1>
     <div class="input">
-      {% form 'customer' %} 
+      {% form 'contact' %} 
         {%- if form.posted_successfully? -%}
           {% render 'icon-success' %}
         {% endif %}
@@ -56,7 +56,7 @@
           <ul>
             <li><a href="#email" class="footer-link">Contact Us</a></li>
             <li><a href="/pages/shop#faq" class="footer-link">FAQs</a></li>
-            <li><a href="" class="footer-link">Returns & Exchanges</a></li>
+            <li><a href="/policies/refund-policy" class="footer-link">Returns & Exchanges</a></li>
           </ul>
         </div>
       </div>
@@ -75,8 +75,12 @@
         <a href="https://www.youtube.com/@estate98coffee"><img src="{{ 'youtube.svg' | asset_url }}" alt="youtube"></a>
       </div>
       <div class="terms">
-        <a href="#" class="footer-link">Privacy Policy</a>
-        <a href="#" class="footer-link">Terms & Conditions</a>
+        <!-- Footer menu -->
+          {% comment %} {% for link in linklists['footer'].links -%}
+            {{ link.title | link_to: link.url }}
+          {%- endfor %} {% endcomment %}
+        <a href="/policies/privacy-policy" class="footer-link">Privacy Policy</a>
+        <a href="/policies/terms-of-service" class="footer-link">Terms & Conditions</a>
       </div>
     </div>
   </div>
