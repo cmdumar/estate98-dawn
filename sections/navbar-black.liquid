@@ -2,13 +2,18 @@
 
 <navbar class="navbar">
   <div class="logo">
-    <a href="/">
+    <a class="logo-black-mbl" href="/">
       <img
         class="logo-black"
-        width="220"
-        height="120"
         loading="eager"
-        src={{ "estate-logo.svg" | asset_url }}
+        src={{ "estate-logo.png" | asset_url }}
+        alt="{{ shop.name }}" />
+    </a>
+    <a class="logo-white-mbl" href="/">
+      <img
+        class="logo-white"
+        loading="eager"
+        src={{ "logo-white.png" | asset_url }}
         alt="{{ shop.name }}" />
     </a>
   </div>
