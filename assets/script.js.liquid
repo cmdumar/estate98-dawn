@@ -1,11 +1,16 @@
 // navbar mobile menu
 
 mblMenu = document.querySelector('.mbl-menu')
+logo = document.querySelector('.logo')
 
 mblMenu.onclick = () => {
     nav = document.querySelector('.nav')
     nav.classList.toggle('show-mbl-menu')
+    logo.classList.toggle('show-white-logo')
+    mblMenu.classList.toggle('active')
 }
+
+
 
 // navLinks = document.querySelectorAll('.nav-link')
 

@@ -76,7 +76,7 @@ input[type=number] {
 
 @font-face {
   font-family: 'Trixie-Text';
-  src: url('./Trixie-Text-Regular.woff2') format('woff2'), url('./Trixie-Text-Regular.woff') format('woff');
+  src: url('./Trixie-Text-Regular.woff2') format('woff2'), url('./Trixie-Text-Regular.woff') format('woff'), url('./Trixie-Text-Regular.ttf') format('truetype') ;
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -429,4 +429,11 @@ svg {
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   line-height: 60px;
+}
+
+@media(max-width: 540px) {
+  .flex-text-first,
+  .flex-image-first {
+    text-align: left;
+  }
 }
