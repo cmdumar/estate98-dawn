@@ -13,7 +13,9 @@ mblMenu.onclick = () => {
 const videoElement = document.getElementById('background-video')
 
 videoElement.addEventListener('suspend', () => {
-        videoElement.style.zIndex = '-2'
+        document.querySelector('.hero-content').style.zIndex = '-2'
+        videoElement.removeAttribute('controls');
+        document.querySelector('.hero').style.backgroundImage = "url("{{ 'hero-poster.png' | asset_url }}")"
 });
 
 // navLinks = document.querySelectorAll('.nav-link')
