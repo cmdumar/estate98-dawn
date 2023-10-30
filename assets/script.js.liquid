@@ -10,7 +10,11 @@ mblMenu.onclick = () => {
     mblMenu.classList.toggle('active')
 }
 
+const videoElement = document.getElementById('background-video')
 
+videoElement.addEventListener('suspend', () => {
+        videoElement.style.zIndex = '-2'
+});
 
 // navLinks = document.querySelectorAll('.nav-link')
 
