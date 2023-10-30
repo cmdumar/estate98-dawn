@@ -10,14 +10,6 @@ mblMenu.onclick = () => {
     mblMenu.classList.toggle('active')
 }
 
-const videoElement = document.getElementById('background-video')
-
-videoElement.addEventListener('suspend', () => {
-        console.log('triggered')
-        // videoElement.removeAttribute('controls');
-        document.querySelector('.hero').style.backgroundImage = "url("{{ 'hero-poster.png' | asset_url }}")"
-});
-
 // navLinks = document.querySelectorAll('.nav-link')
 
 //for adding active class to nav item
