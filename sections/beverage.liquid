@@ -1,4 +1,16 @@
 <div class="beverage-container">
+  <div class="video-container">
+    <video
+      class="promo-video"
+        autoplay
+        loop
+        muted
+        playsinline
+        poster="{{ 'ultra2.png' | asset_url }}"
+      >
+      <source src="{{ 'sequence.mp4' | asset_url }}" type="video/mp4">
+    </video>
+  </div>
   <h1 class="heading-primary">Make Any Coffee Beverage in Seconds</h1>
   <p class="beverage-desc">When life is moving at lightning speed, brewing a perfect cup of coffee is often a luxury we can't afford</p>
   <div class="beverage">
