@@ -112,9 +112,7 @@
 
   .nav {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
     width: 100vw;
     height: 0;
     background-color: black;
@@ -126,6 +124,10 @@
     opacity: 0;
     overflow: hidden;
     z-index: 1;
+  }
+
+  .nav-item {
+    padding-left: 0px;
   }
 
 
@@ -175,9 +177,6 @@
     z-index: 2;
   }
 
-  .nav-item:first-of-type {
-    margin-top: 60px;
-  }
   .nav-item a {
     font-size: 32px;
     color: white;

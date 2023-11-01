@@ -28,16 +28,17 @@
 .content-faq {
   padding-top: 24px;
   line-height: 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s;
+}
+
+.content-faq a {
+  color: var(--clr-theme)
 }
 
 #accordion label + input[type="radio"] {
   display: none;
-}
-
-.content-faq {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.7s;
 }
 
 #accordion label + input[type="radio"]:checked + .content-faq {
