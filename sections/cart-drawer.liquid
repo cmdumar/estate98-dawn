@@ -18,7 +18,7 @@
         {% for item in cart.items %}
           <div class="cart-item" data-line-item-key="{{ item.key }}">
             <div class="cart-img">
-              <img src="{{ item.image  | img_url: '100x'}}" alt="{{item.product.title}}">
+              <img src="{{ 'bottle.png'  | asset_url}}" alt="{{item.product.title}}">
             </div>
             <div class="cart-details">
               <h1 class="cart-item-title">{{ item.product.title }}</h1>
