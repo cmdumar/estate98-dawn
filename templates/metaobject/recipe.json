@@ -1,0 +1,18 @@
+{
+    "sections": {
+        "navbar": {
+            "type": "navbar-black"
+        },
+        "main": {
+            "type": "recipe-content"
+        },
+        "recipe-list": {
+            "type": "our-recipes-list"
+        }
+    },
+    "order": [
+        "navbar",
+        "main",
+        "recipe-list"
+    ]
+}

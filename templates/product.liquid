@@ -1,7 +1,5 @@
-{% comment %} This template is for recipe page, not for product. The recipes are added as products in shoppify admin, hence the recipe page is in 'product.liquid' template {% endcomment %}
-
-{% comment %} The styling is done is 'recipe.css.liquid' which also has styling for the recipe list in other pages {% endcomment %}
 {% section 'navbar-black' %}
+{%- comment -%}
   <section class="container"> <div class="recipe-detail-container">
     <h1 class="heading-primary uppercase">{{ product.title }}</h1>
     <div class="recipe-flex">
@@ -29,3 +27,4 @@
     {% endfor %}
   </div>
 </section>
+{%- endcomment -%}

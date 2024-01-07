@@ -1,0 +1,16 @@
+<section>
+    <h1 id="recipes" class="heading-primary mt-48">OUR RECIPES</h1>
+    <div class="recipes">
+        {% for recipe in shop.metaobjects.recipe.values %}
+            <a href="{{ recipe.system.url }}">
+                <div class="recipe">
+                    <div class="recipe-thumbnail">
+                        <img src="{{ recipe.banner_image | img_url: '400x520', crop: 'center' }}" alt="Image of {{ recipe.name }}">
+                    </div>
+                    <div class="op-bg-90 recipe-opacity"></div>
+                    <p>{{ recipe.name }}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</section>
