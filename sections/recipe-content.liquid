@@ -1,0 +1,13 @@
+<section class="container">
+    <div class="recipe-detail-container">
+        <h1 class="heading-primary uppercase">{{ metaobject.name }}</h1>
+        <div class="recipe-flex">
+            <div class="recipe-left">
+                <div>{{ metaobject.content | metafield_tag }}</div>
+            </div>
+            <div class="recipe-right">
+                <img src="{{ metaobject.banner_image | img_url: '525x700'}}" alt="Image of {{ recipe.name }}">
+            </div>
+        </div>
+    </div>
+</section>
