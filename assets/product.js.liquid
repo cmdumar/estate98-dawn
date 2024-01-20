@@ -87,26 +87,32 @@ function updateCartQuantities() {
     });
 }
 
-
 //product detail section
-mainImg = document.getElementById('MainImg')
-smallImgs = document.getElementsByClassName('sec-img') || []
+// mainImg = document.getElementById('MainImg')
+// smallImgs = document.getElementsByClassName('sec-img') || []
+//
+// for(let img of smallImgs) {
+//     img.onclick = function() {
+//         mainImg.src = img.dataset.largeSrc
+//         mainImg.alt = img.alt
+//     }
+// }
 
-smallImgs[0].onclick = function() {
-    mainImg.src = smallImgs[0].src
-}
-
-smallImgs[1].onclick = function() {
-    mainImg.src = smallImgs[1].src
-}
-
-smallImgs[2].onclick = function() {
-    mainImg.src = smallImgs[2].src
-}
-
-smallImgs[3].onclick = function() {
-    mainImg.src = smallImgs[3].src
-}
+// smallImgs[0].onclick = function() {
+//     mainImg.src = smallImgs[0].src
+// }
+//
+// smallImgs[1].onclick = function() {
+//     mainImg.src = smallImgs[1].src
+// }
+//
+// smallImgs[2].onclick = function() {
+//     mainImg.src = smallImgs[2].src
+// }
+//
+// smallImgs[3].onclick = function() {
+//     mainImg.src = smallImgs[3].src
+// }
 
 // tab
 
@@ -163,3 +169,36 @@ delivery.onclick = function() {
 //     }
 // }
 
+
+document.addEventListener( 'DOMContentLoaded', function () {
+    var main = new Splide('#product-images-carousel', {
+        rewind    : true,
+        pagination: false,
+        arrows    : true,
+        type    : 'loop',
+        autoplay: true,
+    } );
+
+    var thumbnails = new Splide('#product-images-thumbnail-carousel', {
+        fixedWidth  : 100,
+        fixedHeight : 100,
+        gap         : 0,
+        rewind      : true,
+        pagination  : false,
+        isNavigation: true,
+        // focus  : 'center',
+        lazyLoad: 'nearby',
+        arrows: false,
+        breakpoints : {
+            600: {
+                fixedWidth : 60,
+                fixedHeight: 44,
+            },
+        },
+    } );
+
+    main.sync( thumbnails );
+    main.mount();
+    thumbnails.mount();
+    thumbnails.play()
+} );
