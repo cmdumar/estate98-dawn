@@ -1,6 +1,6 @@
 {% section 'navbar-black' %}
 {%- comment -%}
-  <section class="container"> <div class="recipe-detail-container">
+  <section class=my-container"> <div class="recipe-detail-container">
     <h1 class="heading-primary uppercase">{{ product.title }}</h1>
     <div class="recipe-flex">
       <div class="recipe-left">
@@ -12,7 +12,7 @@
     </div>
   </div>
 
-  <h1 class="heading-primary mt-48">OUR RECIPES</h1>
+  <h1 class="heading-primary my-mt-48">OUR RECIPES</h1>
   <div class="recipes">
     {% for product in collections['recipe'].products %}
       <a href="{{ product.url }}">

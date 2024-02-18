@@ -1,18 +1,23 @@
 {% section 'navbar-black' %}
-<section class="container">
-    <h1 id="recipes" class="heading-primary mt-48">OUR RECIPES</h1>
-    <div class="recipes recipes-grid">
-        {% for recipe in shop.metaobjects.recipe.values %}
-            <a href="{{ recipe.system.url }}">
-                <div class="recipe">
-                    <div class="recipe-thumbnail">
-                        <img src="{{ recipe.banner_image | img_url: '400x520', crop: 'center' }}"
+<section class="p-6 mt-60">
+    <h1 class="mt-12 font-gothic text-5xl text-center uppercase">Our Recipes</h1>
+    <div class="mx-auto container p-6 mt-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for recipe in shop.metaobjects.recipe.values %}
+                <a class="cursor-pointer" href="{{ recipe.system.url }}">
+                    <div class="relative w-full h-[520px] bg-gray-100">
+                        <img class="w-full h-full object-cover"
+                             src="{{ recipe.banner_image | img_url: '400x520', crop: 'center' }}"
+                             width="400"
+                             height="520"
                              alt="Image of {{ recipe.name }}">
+                        <div class=""></div>
+                        <div class="absolute bottom-0 inset-x-0 p-6 h-fit bg-black/50 overflow-hidden">
+                            <p class="text-center text-2xl font-gothic uppercase text-white break-all">{{ recipe.name }}</p>
+                        </div>
                     </div>
-                    <div class="op-bg-90 recipe-opacity"></div>
-                    <p>{{ recipe.name }}</p>
-                </div>
-            </a>
-        {% endfor %}
+                </a>
+            {% endfor %}
+        </div>
     </div>
 </section>
