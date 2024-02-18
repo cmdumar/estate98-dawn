@@ -1,89 +1,88 @@
 <div class="footer">
-  <div class="join z-2">
-    <h1 class="heading-primary theme-clr mb-30">JOIN LA FAMILIA</h1>
-    <div class="input">
-      {% form 'customer' %} 
-        {%- if form.posted_successfully? -%}
-          {% render 'icon-success' %}
-        {% endif %}
-        {{ form.errors | default_errors }} 
-        <div class="subscribe-form">     
-          <label for="email"></label>
-          <input
-            type="email"
-            id="email"
-            name="contact[email]"
-            placeholder="ENTER YOUR EMAIL">
-            <div class="separator"></div>
-          <input class="btn-subscribe" type="submit"            value="SUBSCRIBE" />
+    <div class="join z-2">
+        <h1 class="heading-primary theme-clr mb-30">JOIN LA FAMILIA</h1>
+        <div class="input">
+            {% form 'customer' %}
+            {%- if form.posted_successfully? -%}
+                {% render 'icon-success' %}
+            {% endif %}
+            {{ form.errors | default_errors }}
+            <div class="subscribe-form">
+                <label for="email"></label>
+                <input
+                        type="email"
+                        id="email"
+                        name="contact[email]"
+                        placeholder="ENTER YOUR EMAIL">
+                <div class="separator"></div>
+                <input class="btn-subscribe" type="submit"            value="SUBSCRIBE" />
+            </div>
+            {% endform %}
         </div>
-      {% endform %}
+        <p>Receive a 20% discount on your first order and stay up to date with our latest news and updates.</p>
     </div>
-    <p>Receive a 20% discount on your first order and stay up to date with our latest news and updates.</p>
-  </div>
-  {% comment %} <div class="popup">
-    <img src="{{ 'tick.png' | asset_url }}" width="80" height="80" alt="Success" loading="eager">
-    <h2 class="heading-secondary">Thank You</h2>
-    <p>You will receive an email shortly</p>
-    <button class="btn-popup" type="button">OK</button>
-  </div> {% endcomment %}
-  <div class="overlay"></div>
+    {% comment %} <div class="popup">
+        <img src="{{ 'tick.png' | asset_url }}" width="80" height="80" alt="Success" loading="eager">
+        <h2 class="heading-secondary">Thank You</h2>
+        <p>You will receive an email shortly</p>
+        <button class="btn-popup" type="button">OK</button>
+    </div> {% endcomment %}
+    <div class="overlay"></div>
 </div>
-  
-  <div class="footer-2">
+
+<div class="footer-2">
 
     <div class="footer-links">
-      <div class="footer-grid">
-        <div class="footer-grid-item">
-          <h1 class="heading-footer-links">SHOP</h1>
-          <ul>
-            <li><a href="/pages/shop" class="footer-link">Speciality Ultra Concentrated Coffee</a></li>
-            <li><a href="#" class="footer-link">Travel Mug Bundle</a></li>
-            <li><a href="#" class="footer-link">Camp Mug Bundle</a></li>
-          </ul>
-        </div>
+        <div class="footer-grid">
+            <div class="footer-grid-item">
+                <h1 class="heading-footer-links">SHOP</h1>
+                <ul>
+                    <li><a href="/pages/shop" class="footer-link">Speciality Ultra Concentrated Coffee</a></li>
+                    {% comment %} <li><a href="#" class="footer-link">Travel Mug Bundle</a></li> {% endcomment %}
+                    {% comment %} <li><a href="#" class="footer-link">Camp Mug Bundle</a></li> {% endcomment %}
+                </ul>
+            </div>
 
-        <div class="footer-grid-item">
-          <h1 class="heading-footer-links">ABOUT US</h1>
-          <ul>
-            <li><a href="/pages/craft" class="footer-link">Our Craft</a></li>
-            <li><a href="/pages/story" class="footer-link">Our Story</a></li>
-            <li><a href="/#recipes" class="footer-link">Recipes</a></li>
-          </ul>
-        </div>
+            <div class="footer-grid-item">
+                <h1 class="heading-footer-links">ABOUT US</h1>
+                <ul>
+                    <li><a href="/pages/craft" class="footer-link">Our Craft</a></li>
+                    <li><a href="/pages/story" class="footer-link">Our Story</a></li>
+                    <li><a href="/#recipes" class="footer-link">Recipes</a></li>
+                </ul>
+            </div>
 
-        <div class="footer-grid-item">
-          <h1 class="heading-footer-links">CONTACT</h1>
-          <ul>
-            <li><a href="#email" class="footer-link">Contact Us</a></li>
-            <li><a href="/pages/shop#faq" class="footer-link">FAQs</a></li>
-            <li><a href="/policies/refund-policy" class="footer-link">Returns & Exchanges</a></li>
-          </ul>
+            <div class="footer-grid-item">
+                <h1 class="heading-footer-links">CONTACT</h1>
+                <ul>
+                    <li><a href="#email" class="footer-link">Contact Us</a></li>
+                    <li><a href="/pages/shop#faq" class="footer-link">FAQs</a></li>
+                    <li><a href="/policies/refund-policy" class="footer-link">Returns & Exchanges</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
     </div>
-    
+
     <div class="footer-socials">
-      <div class="logo">
-        <a href="/">
-          <img src="{{ 'logo-white.png' | asset_url }}" alt="Estate98">
-        </a>
-      </div>
-      <div class="socials">
-
-        <a href="https://www.instagram.com/estate98coffee/"><img src="{{ 'instagram.svg' | asset_url }}" alt="instagram"></a>
-        <a href="https://www.facebook.com/estate98coffee"><img src="{{ 'facebook.svg' | asset_url }} alt="facebook"></a>
-        <a href="https://www.tiktok.com/@drinkestate98"><img src="{{ 'tiktok.png' | asset_url }}" width="30" height="31" alt="tiktok"></a>
-        <a href="https://www.youtube.com/@estate98coffee"><img src="{{ 'youtube.svg' | asset_url }}" alt="youtube"></a>
-      </div>
-      <div class="terms">
-        <!-- Footer menu -->
-        <a href="/policies/privacy-policy" class="footer-link">Privacy Policy</a>
-        <a href="/policies/terms-of-service" class="footer-link">Terms & Conditions</a>
-      </div>
+        <div class="logo">
+            <a href="/">
+                <img src="{{ 'logo-white.png' | asset_url }}" alt="Estate98">
+            </a>
+        </div>
+        <div class="socials">
+            <a href="https://www.instagram.com/drinkestate98/"><img src="{{ 'instagram.svg' | asset_url }}" alt="instagram"></a>
+            <a href="https://www.facebook.com/drinkestate98"><img src="{{ 'facebook.svg' | asset_url }} alt="facebook"></a>
+            <a href="https://www.tiktok.com/@drinkestate98"><img src="{{ 'tiktok.png' | asset_url }}" width="30" height="31" alt="tiktok"></a>
+            <a href="https://www.youtube.com/@drinkestate98"><img src="{{ 'youtube.svg' | asset_url }}" alt="youtube"></a>
+        </div>
+        <div class="terms">
+            <!-- Footer menu -->
+            <a href="/policies/privacy-policy" class="footer-link">Privacy Policy</a>
+            <a href="/policies/terms-of-service" class="footer-link">Terms & Conditions</a>
+        </div>
     </div>
 
-  </div>
+</div>
 
 
 
