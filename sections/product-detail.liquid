@@ -35,39 +35,14 @@
                         </ul>
                     </div>
             </div>
-            {%- comment -%}
-            <div id="main-product-images-carousel" class="splide" aria-label="My Awesome Gallery">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        {% for image in product.images %}
-                            <li class="splide__slide">
-                                <img
-                                src="{{ image.src | product_img_url: 'original' }}"
-                                alt="{{ image.alt | escape }}">
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            <ul id="thumbnails" class="product-image-carousel-thumbnail-container">
-                {% for image in product.images %}
-                    <li class="product-image-carousel-thumbnail">
-                        <img
-                        src="{{ image.src | product_img_url: 'medium' }}"
-                        alt="{{ image.alt | escape }}">
-                    </li>
-                {% endfor %}
-
-            </ul>
-            {%- endcomment -%}
         {% else %}
             <p>No Product Images Found</p>
         {% endif%}
         </div>
         <div class="col-2 product-right">
             <div class="tab">
-                <div class="delivery" data-selected="true">AUTO DELIVERY</div>
-                <div class="onetime" data-selected="false">ONE TIME</div>
+                <div class="delivery" data-selected="false">AUTO DELIVERY</div>
+                <div class="onetime" data-selected="true">ONE TIME</div>
             </div>
             <div class="title-container">
                 <h1 class="title">Ultra Concentrated Coffee</h1>
@@ -124,7 +99,7 @@
             <div class="total">
                 <span>TOTAL</span>
                 <div>
-                    {% comment %} <span class="dollar-symbol">$</span> {% endcomment %}
+                    <span id="price-selling-plan-compare-price" class="line-through mr-2">{{ product.variants[0].selling_plan_allocations[0].compare_at_price | money_without_trailing_zeros }}</span>
                     <span class="price-selling-plan">{{ product.variants[0].selling_plan_allocations[0].price | money_without_trailing_zeros }}</span>
                     <span class="price-normal">{{ product.price | money_without_trailing_zeros }}</span>
                     <span class="month">/MO</span>

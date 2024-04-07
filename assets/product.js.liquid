@@ -122,28 +122,46 @@ month = document.querySelector('.month')
 priceNormal = document.querySelector('.price-normal')
 priceSellingPlan = document.querySelector('.price-selling-plan')
 sellingPlan = document.querySelector('#plan')
+priceSellingPlanComparePrice = document.querySelector('#price-selling-plan-compare-price')
 
 
-oneTime.onclick = function() {
+function selectOneTimeTab() {
     sellingPlan.setAttribute('value', '');
     priceNormal.style.display = 'inline-block'
     priceSellingPlan.style.display = 'none'
     delivery.dataset.selected = "false"
     oneTime.dataset.selected = "true"
     month.style.display = 'none'
+    priceSellingPlanComparePrice.style.display = 'none'
 }
 
-delivery.onclick = function() {
+
+function selectAutoDeliveryTab() {
     jQuery.getJSON(window.Shopify.routes.root + 'products/speciality-ultra-concentrated-coffee.js', function(product) {
         sellingPlanId = product.variants[0].selling_plan_allocations[0].selling_plan_id
         sellingPlan.setAttribute('value', sellingPlanId );
     });
-    priceSellingPlan.style.display = 'inline-block' 
+    priceSellingPlan.style.display = 'inline-block'
+    priceSellingPlanComparePrice.style.display = 'inline-block'
     priceNormal.style.display = 'none'
     delivery.dataset.selected = "true"
     oneTime.dataset.selected = "false"
     month.style.display = 'inline'
 }
+
+
+oneTime.onclick = selectOneTimeTab
+delivery.onclick = selectAutoDeliveryTab
+
+
+if(delivery.dataset.selected == 'true') {
+    selectAutoDeliveryTab()
+}
+
+if(oneTime.dataset.selected == 'true') {
+    selectOneTimeTab()
+}
+
 
 
 // qty = document.querySelector('.qty')
